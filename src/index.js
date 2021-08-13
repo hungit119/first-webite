@@ -3,6 +3,7 @@ const morgan = require('morgan')
 const handlebars = require('express-handlebars')
 const path = require('path')
 const router = require('./routes')
+const db = require('./config/db')
 
 const app = express()
 const port = 3005
@@ -28,3 +29,5 @@ router(app)
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
 })
+
+db.connect()

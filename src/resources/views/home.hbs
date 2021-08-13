@@ -1,1 +1,88 @@
-<h1>HOME PAGE</h1>
+<div class="row">
+    <div class="colum-12">
+        <form class="form">
+            <div class="form-group colum-12">
+                <input
+                    type="text"
+                    name="search"
+                    class="input-search"
+                    placeholder="Bạn muốn xem gì ?"
+                />
+                <button type="submit" class="btn-search">Tìm kiếm</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="colum-12 text-head">
+        <p class="text-item">
+            Phim Hay Kinh Điển
+        </p>
+    </div>
+</div>
+<div class="row danh-muc-wrap">
+    <div class="danh-muc-section">
+        <a href="" class="danh-muc active" style="text-decoration: none;">
+            Tất cả phim
+        </a>
+    </div>
+    <div class="danh-muc-section">
+        <a href="" class="danh-muc" style="text-decoration: none;">
+            Sắp chiếu
+        </a>
+    </div>
+    <div class="danh-muc-section">
+        <a href="" class="danh-muc" style="text-decoration: none;">
+            Phim mới
+        </a>
+    </div>
+</div>
+<div class="container">
+    <div class="row body-home">
+        {{#each films}}
+            <div class="colum-12 card-film">
+                <div class="content-film">
+                    <div class="img-content-film">
+                        <img src="{{this.img}}" alt="" class="img-film" />
+                    </div>
+                    <div class="body">
+                        <div class="name-film-content">
+                            <p class="name-film color-text">
+                                {{this.name}}
+                            </p>
+                        </div>
+                        <div class="year color-text">
+                            ({{this.namSuatBan}})
+                        </div>
+                        <div class="star">
+                            <ul class="list-star">
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rate-film color-text">
+                           Rate : {{this.rate}}
+                        </div>
+                    </div>
+                    <div class="tag-film color-text">
+                        <i class="fas fa-tags" style="color: #C59A22;"></i>
+                        {{this.theLoai}}
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
