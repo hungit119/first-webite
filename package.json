@@ -1,0 +1,31 @@
+{
+  "name": "webphim",
+  "version": "1.0.0",
+  "description": "webphim code by hungtran",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/sass --output src/public/css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hungit119/filmhay.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "hungtran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hungit119/filmhay/issues"
+  },
+  "homepage": "https://github.com/hungit119/filmhay#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "morgan": "^1.10.0",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12"
+  }
+}
