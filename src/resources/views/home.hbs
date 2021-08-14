@@ -43,12 +43,16 @@
             <div class="colum-12 card-film">
                 <div class="content-film">
                     <div class="img-content-film">
-                        <img src="{{this.img}}" alt="" class="img-film" />
+                        <a href="/films/detail/{{this._id}}">
+                            <img src="{{this.img}}" alt="" class="img-film" />
+                        </a>
                     </div>
                     <div class="body">
                         <div class="name-film-content">
                             <p class="name-film color-text">
-                                {{this.name}}
+                                <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;">
+                                    {{this.name}}
+                                </a>
                             </p>
                         </div>
                         <div class="year color-text">
@@ -73,14 +77,17 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="rate-film color-text">
-                           Rate : {{this.rate}}
-                        </div>
+                        <span class="rate-film color-text">
+                            Rate :
+                            {{this.rate}}
+                        </span>
                     </div>
-                    <div class="tag-film color-text">
+                </div>
+                <div class="tag-film color-text">
+                    <a href="" style="color: #FEFEFE;">
                         <i class="fas fa-tags" style="color: #C59A22;"></i>
                         {{this.theLoai}}
-                    </div>
+                    </a>
                 </div>
             </div>
         {{/each}}

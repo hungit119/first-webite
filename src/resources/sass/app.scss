@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    scroll-behavior:smooth;
 }
 body{
     background-color: #081B27;
@@ -99,6 +100,7 @@ header{
     margin-top: 60px;
 }
 .card-film{
+    margin-top: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,6 +137,158 @@ header{
 }
 .active-star{
     color: #F1B722;
+}
+.input-width{
+    width: 60%;
+}
+.label-width{
+    width: 40%;
+}
+.label{
+    color: #FEFEFE;
+    font-size: 1rem;
+}
+.content-add{
+    margin: 48px 0;
+}
+.btn-cus{
+    background-color: #F1B722;
+    color: #000;
+    border: none;
+}
+.btn-cus:hover{
+    background-color: #000;
+    color: #F1B722;
+}
+.border-r{
+    border-radius: 5px;
+}
+.head-list{
+    background-color: #FEFEFE;
+    border-radius: 5px;
+}
+.text-head-list{
+    color: #000;
+    font-size: 1.4rem;
+    text-align: center;
+}
+.btn-xoa{
+    display: block;
+    background-color: brown;
+    padding: 4px 6px;
+    border-radius: 4px;
+    color: #FEFEFE;
+    text-align: center;
+}
+.btn-sua{
+    display: block;
+    background-color: #3898EC;
+    padding: 4px 6px;
+    border-radius: 4px;
+    color: #FEFEFE;
+    text-align: center;
+}
+//DEATAIL
+.content-detail{
+    margin-top: 100px;
+}
+.img-detail{
+    text-align: center;
+}
+.img-dt{
+    width: 240px;
+    height: 350px;
+    border-radius: 10px;
+}
+.text-name{
+    font-size: 2rem;
+    color: #FEFEFE;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.time-icon{
+    color: #F1B722;
+    font-size: 1.4rem;
+    margin-top: 4px;
+}
+.text-namSB{
+    color: #FEFEFE;
+    font-size: 1.2rem;
+    margin: 0 6px;
+}
+.time{
+    display: flex;
+    align-items: center;
+}
+.btn-play{
+    margin:12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-trailer{
+    margin-right: 6px;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    color: #FEFEFE;
+    outline: none !important;
+    background-color: #3898EC;
+}
+.btn-xem{
+    margin-right: 6px;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    color: #FEFEFE;
+    outline: none !important;
+    background-color: #E46466;
+}
+.list-content{
+    padding: 0;
+    list-style: none;
+}
+.item-content{
+    color: #FEFEFE;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+}
+.mota{
+    font-size: 1.2rem;
+    color: #9CABB6;
+}
+.input-search-ft{
+    width: 90%;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 12px;
+    text-align: center;
+}
+.search-icon{
+    color: #FEFEFE;
+    padding: 6px;
+}
+.footer-content{
+    text-align: center;
+}
+.list-footer{
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.item-footer-link{
+    color: #4091C9;
+    font-size: 1.2rem;
+}
+.color-icon{
+    color: #F1B722;
+}
+.footer-text{
+    color: #F1B722;
+    display: block;
+    padding: 30px;
+    text-align: center;
 }
 // header
 //Desktop

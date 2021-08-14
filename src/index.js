@@ -4,7 +4,6 @@ const handlebars = require('express-handlebars')
 const path = require('path')
 const router = require('./routes')
 const db = require('./config/db')
-
 const app = express()
 const port = 3005
 

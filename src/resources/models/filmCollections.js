@@ -18,6 +18,18 @@ const Film = new Schema({
         type:String,
         default:"N/A"
     },
+    trailer:{
+        type:String,
+        default:"N/A"
+    },
+    full:{
+        type:String,
+        default:"N/A"
+    },
+    moTa:{
+        type:String,
+        default:"N/A"
+    },
     soTap:{
         type:String,
         default:"N/A"
@@ -52,7 +64,7 @@ const Film = new Schema({
     },
     trangweb:{
         type:String,
-        default:"N/A"
+        default:"yeuphim.com"
     },
 },
 { timestamps: { createdAt: 'created_at' } });
