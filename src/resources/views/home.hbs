@@ -2,12 +2,7 @@
     <div class="colum-12">
         <form class="form">
             <div class="form-group colum-12">
-                <input
-                    type="text"
-                    name="search"
-                    class="input-search"
-                    placeholder="Bạn muốn xem gì ?"
-                />
+                <input type="text" name="search" class="input-search" placeholder="Bạn muốn xem gì ?" />
                 <button type="submit" class="btn-search">Tìm kiếm</button>
             </div>
         </form>
@@ -39,57 +34,70 @@
 </div>
 <div class="container">
     <div class="row body-home">
-        {{#each films}}
-            <div class="colum-12 card-film">
-                <div class="content-film">
-                    <div class="img-content-film">
-                        <a href="/films/detail/{{this._id}}">
-                            <img src="{{this.img}}" alt="" class="img-film" />
+        <div class="colum-9">
+            <div class="row">
+                {{#each films}}
+                <div class="colum-s-6 colum-3 card-film">
+                    <div class="content-film">
+                        <div class="img-content-film">
+                            <a href="/films/detail/{{this._id}}">
+                                <img src="{{this.img}}" alt="" class="img-film" />
+                            </a>
+                        </div>
+                        <div class="body">
+                            <div class="name-film-content">
+                                <p class="name-film color-text">
+                                    <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;">
+                                        {{this.name}}
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="year color-text">
+                                ({{this.namSuatBan}})
+                            </div>
+                            <div class="star">
+                                <ul class="list-star">
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="rate-film color-text">
+                                Rate :
+                                {{this.rate}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="tag-film color-text">
+                        <a href="" style="color: #FEFEFE;">
+                            <i class="fas fa-tags" style="color: #C59A22;"></i>
+                            {{this.theLoai}}
                         </a>
                     </div>
-                    <div class="body">
-                        <div class="name-film-content">
-                            <p class="name-film color-text">
-                                <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;">
-                                    {{this.name}}
-                                </a>
-                            </p>
-                        </div>
-                        <div class="year color-text">
-                            ({{this.namSuatBan}})
-                        </div>
-                        <div class="star">
-                            <ul class="list-star">
-                                <li>
-                                    <i class="fas fa-star active-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star active-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star active-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star active-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fas fa-star active-star"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <span class="rate-film color-text">
-                            Rate :
-                            {{this.rate}}
-                        </span>
-                    </div>
                 </div>
-                <div class="tag-film color-text">
-                    <a href="" style="color: #FEFEFE;">
-                        <i class="fas fa-tags" style="color: #C59A22;"></i>
-                        {{this.theLoai}}
-                    </a>
-                </div>
+                {{/each}}
             </div>
-        {{/each}}
-    </div>
+        </div>
+        <div class="colum-3 side-right">
+            <div class="row">
+                <div class="media">
+  <img class="mr-3" src="..." alt="Generic placeholder image">
+  <div class="media-body">
+    <h5 class="mt-0">Media heading</h5>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+  </div>
 </div>
+            </div>
+        </div>

@@ -5,7 +5,7 @@ const path = require('path')
 const router = require('./routes')
 const db = require('./config/db')
 const app = express()
-const port = 3005
+const port = 3000
 
 //option
 app.use(express.urlencoded({

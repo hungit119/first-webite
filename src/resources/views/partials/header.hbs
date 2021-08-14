@@ -7,7 +7,70 @@
             <p class="logo-text">YEUPHIM</p>
         </a>
     </span>
+    <div class="navs">
+        <ul class="list-navs">
+            <li class="item-nav"><a href="#" class="link-navs active-navs">Phim Mới</a></li>
+            <li class="item-nav"><a href="#" class="link-navs">Phim Tình Cảm</a></li>
+            <li class="item-nav"><a href="#" class="link-navs">Phim Hành Động</a></li>
+            <li class="item-nav"><a href="#" class="link-navs">Nước mắt chan cơm</a></li>
+            <li class="item-nav"><a href="#" class="link-navs">Phim chiếu rạp</a></li>
+        </ul>
+    </div>
     <span class="nav-menu">
+        <a href="javascript:void(0)" class="btnOpen" onclick="opennav()" style="color: #FEFEFE;">
         <i class="fas fa-bars"></i>
+        </a>
+        <div class="content-menu-sidebar" id="MySlide">
+            <ul class="list-item-menu">
+                <li class="item-menu">
+                    <a href="">
+                        Phim Lẻ
+                    </a>
+                    <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">
+                        <i class="fas fa-times icon-close"></i>
+                    </a>
+                </li>
+                <div class="dropdown-divider"></div>
+                <li class="item-menu">
+                    <a href="">
+                        Nước Mắt Chan Canh
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="">
+                        Phim Kinh Dị
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="">
+                        Phim Chiếu rạp
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="">
+                        Danh sách phim
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="">
+                        Thêm Phim
+                    </a>
+                </li>
+                <div class="dropdown-divider"></div>
+                <li class="item-menu">
+                    <a href="">
+                        Tài khoản
+                    </a>
+                </li>
+            </ul>
+        </div>
     </span>
+    <script>
+       function opennav(){
+           document.getElementById('MySlide').style.marginRight = "0%";
+       }
+       function closeNav(){
+           document.getElementById('MySlide').style.marginRight = "-100%";
+       }
+    </script>
 </header>
