@@ -102,9 +102,14 @@
                 {{#each filmsHD}}
                 <div class="colum-12">
                     <div class="media">
-                        <img class="mr-3 img-sidebars" src="{{this.img}}" alt="Generic placeholder image">
+                        <a href="/films/detailDC/{{this._id}}">
+                            <img class="mr-3 img-sidebars" src="{{this.img}}" alt="Generic placeholder image">
+                        </a>
                         <div class="media-body">
-                            <h5 class="mt-0 text-sidebars">{{this.name}}</h5>
+                            <a href="/films/detailDC/{{this._id}}">
+                                <h5 class="mt-0 text-sidebars">{{this.name}}</h5>
+                            </a>
+                            <a href="/films/detailDC/{{this._id}}">
                             <div class="star">
                                 <ul class="list-star list-star-bars">
                                     <li>
@@ -124,6 +129,7 @@
                                     </li>
                                 </ul>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>

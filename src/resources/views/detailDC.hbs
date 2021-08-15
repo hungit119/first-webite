@@ -1,0 +1,107 @@
+<div class="container content-detail">
+    <div class="row">
+        <div class="colum-4 img-detail">
+            <img src="{{filmsDC.img}}" alt="" class="img-dt" />
+        </div>
+        <div class="colum-8 head-name">
+            <div class="text-name">
+                {{filmsDC.name}}
+            </div>
+            <div class="star">
+                <ul class="list-star">
+                    <li>
+                        <i class="fas fa-star active-star"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-star active-star"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-star active-star"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-star active-star"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-star active-star"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="tag-film color-text">
+                <a href="" style="color: #FEFEFE;">
+                    <i class="fas fa-tags" style="color: #C59A22;"></i>
+                    {{filmsDC.theLoai}}
+                </a>
+            </div>
+            <div class="time">
+                <span class="icon">
+                    <i class="far fa-clock time-icon"></i>
+                </span>
+                <span class="text-SB">
+                    <p class="text-namSB">{{filmsDC.ngayCongChieu}}</p>
+                </span>
+            </div>
+            <div class="btn-play">
+                <a href="#trailer">
+                    <button class="btn-trailer">Trailer</button>
+                </a>
+                <a href="">
+                    <button class="btn-xem">Xem phim</button>
+                </a>
+            </div>
+            <div class="content-detail-body">
+                <ul class="list-content">
+                    <li class="item-content">
+                        <label for="daoDien">Đạo diễn:</label>
+                        {{filmsDC.daoDien}}
+                    </li>
+                    <li class="item-content">
+                        <label for="">Thời lượng:</label>
+                        {{filmsDC.thoiLuong}}
+                    </li>
+                    <li class="item-content">
+                        <label for="">Số tập:</label>
+                        {{filmsDC.soTap}}
+                    </li>
+                    <li class="item-content">
+                        <label for="">Năm sản xuất:</label>
+                        {{filmsDC.namSuatBan}}
+                    </li>
+                    <li class="item-content">
+                        <label for="">Quốc gia:</label>
+                        {{filmsDC.quocGia}}
+                    </li>
+                    <li class="item-content">
+                        <label for="">Thể loại:</label>
+                        {{filmsDC.theLoai}}
+                    </li>
+                    <li class="item-content">
+                        <label for="">Diễn viên:</label>
+                        {{filmsDC.dienVien}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="colum-12">
+            <p class="mota">
+                {{filmsDC.moTa}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="colum-12">
+            <div id="trailer" class="trailer-video">
+                <iframe
+                    width="100%"
+                    height="700px"
+                    src="https://www.youtube.com/embed/{{filmsDC.trailer}}"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@
     <div class="colum-12">
         <div class="head-list">
             <p class="text-head-list">
-                Danh sách phim trong database
+                Danh sách phim trang chủ
             </p>
         </div>
         <table class="table table-light border-r">
@@ -17,16 +17,52 @@
             </thead>
             <tbody>
                 {{#each films}}
-                    <tr>
-                        <th scope="row">{{@index}}</th>
-                        <td>{{this.name}}</td>
-                        <td>{{this.rate}}</td>
-                        <td>{{this.theLoai}}</td>
-                        <td><a href="#" class="btn-xoa">Xóa</a></td>
-                        <td><a href="#" class="btn-sua">Sửa</a></td>
-                    </tr>
+                <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.rate}}</td>
+                    <td>{{this.theLoai}}</td>
+                    <td><a href="#" class="btn-xoa">Xóa</a></td>
+                    <td><a href="#" class="btn-sua">Sửa</a></td>
+                </tr>
                 {{/each}}
             </tbody>
         </table>
+        <a href="/films/add">
+            <button class="btn btn-success">Thêm Phim vào danh sách</button>
+        </a>
+    </div>
+    <div class="colum-12">
+        <div class="head-list">
+            <p class="text-head-list">
+                Danh sách phim đề cử
+            </p>
+        </div>
+        <table class="table table-light border-r">
+            <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Tên phim</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Thể loại</th>
+                    <th scope="col" colspan="2">Tùy chọn</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each filmsHD}}
+                <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.rate}}</td>
+                    <td>{{this.theLoai}}</td>
+                    <td><a href="#" class="btn-xoa">Xóa</a></td>
+                    <td><a href="#" class="btn-sua">Sửa</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <a href="/films/addDC">
+            <button class="btn btn-success">Thêm Phim vào danh sách</button>
+        </a>
     </div>
 </div>
