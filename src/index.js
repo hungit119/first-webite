@@ -5,7 +5,7 @@ const path = require('path')
 const router = require('./routes')
 const db = require('./config/db')
 const app = express()
-const port = 3000
+const port = 3005
 
 //option
 app.use(express.urlencoded({
@@ -24,6 +24,20 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
 router(app)
+
+//
+// const Users = require('../src/resources/models/users.model')
+// async function testAddUser(){
+//   const rs = await Users.create({
+//     username: 'ducsine9x',
+//     fullName: 'duc',
+//     gender:true,
+//     email: 'duchoangvo@9x'
+//   })
+
+//   console.log(rs)
+// }
+//
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)

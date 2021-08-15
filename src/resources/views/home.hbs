@@ -9,29 +9,33 @@
     </div>
 </div>
 <div class="row">
-    <div class="colum-12 text-head">
+    <div class="colum-4 text-head">
         <p class="text-item">
             Phim Hay Kinh Điển
         </p>
     </div>
+    <div class="colum-4">
+
+        <div class="row danh-muc-wrap">
+            <div class="danh-muc-section">
+                <a href="" class="danh-muc active" style="text-decoration: none;">
+                    Tất cả phim
+                </a>
+            </div>
+            <div class="danh-muc-section">
+                <a href="" class="danh-muc" style="text-decoration: none;">
+                    Sắp chiếu
+                </a>
+            </div>
+            <div class="danh-muc-section">
+                <a href="" class="danh-muc" style="text-decoration: none;">
+                    Phim mới
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="row danh-muc-wrap">
-    <div class="danh-muc-section">
-        <a href="" class="danh-muc active" style="text-decoration: none;">
-            Tất cả phim
-        </a>
-    </div>
-    <div class="danh-muc-section">
-        <a href="" class="danh-muc" style="text-decoration: none;">
-            Sắp chiếu
-        </a>
-    </div>
-    <div class="danh-muc-section">
-        <a href="" class="danh-muc" style="text-decoration: none;">
-            Phim mới
-        </a>
-    </div>
-</div>
+
 <div class="container">
     <div class="row body-home">
         <div class="colum-9">
@@ -47,7 +51,7 @@
                         <div class="body">
                             <div class="name-film-content">
                                 <p class="name-film color-text">
-                                    <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;">
+                                    <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;" class="name-text-film">
                                         {{this.name}}
                                     </a>
                                 </p>
@@ -90,14 +94,41 @@
                 {{/each}}
             </div>
         </div>
-        <div class="colum-3 side-right">
-            <div class="row">
-                <div class="media">
-  <img class="mr-3" src="..." alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">Media heading</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-  </div>
-</div>
+        <div class="colum-3 side-bars-right">
+            <div class="head-side">
+                <p>Phim Đề Cử</p>
+            </div>
+            <div class="row side-right">
+                {{#each filmsHD}}
+                <div class="colum-12">
+                    <div class="media">
+                        <img class="mr-3 img-sidebars" src="{{this.img}}" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0 text-sidebars">{{this.name}}</h5>
+                            <div class="star">
+                                <ul class="list-star list-star-bars">
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-star active-star"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
             </div>
         </div>
+    </div>
+</div>

@@ -24,12 +24,24 @@ class FilmController {
       .catch(next);
   }
   detail(req, res, next) {
-    Film.findById(req.params.id)
+    Film.films.findById(req.params.id)
       .then((Films) => {
         const films = Films.toObject();
         res.render('detail', {films});
       })
       .catch(next);
+  }
+  phimTC(req,res,next){
+    res.render('phimTC')
+  }
+  phimHD(req,res,next){
+    res.render('phimHD')
+  }
+  phimNMCC(req,res,next){
+    res.render('phimNMCC')
+  }
+  phimCR(req,res,next){
+    res.render('phimCR')
   }
 }
 
