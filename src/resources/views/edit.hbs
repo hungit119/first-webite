@@ -1,8 +1,8 @@
 <div class="container content-add mt-4">
-    <h1 style="color:#F1B722;">Thêm phim vào danh mục đề cử <span class="badge badge-secondary">EDIT</span></h1>
+    <h1 style="color:#F1B722;">Sửa phim <span class="badge badge-secondary">EDIT</span></h1> 
     <div class="row">
         <div class="colum-12">
-            <form method="POST" action="/films/dataDC">
+            <form method="POST" action="/films/data">
                 <div class="form-group">
                     <label class="label" for="name"> Tên:</label>
                     <input
@@ -10,6 +10,7 @@
                         class="form-control input-width"
                         name="name"
                         placeholder="Tên phim"
+                        value="{{Film.name}}"
                     />
                 </div>
                 <div class="form-group">
@@ -19,6 +20,7 @@
                         class="form-control input-width"
                         name="rate"
                         placeholder="Rate phim"
+                        value="{{Film.rate}}"
                     />
                 </div>
                 <div class="form-group">
@@ -28,6 +30,7 @@
                         class="form-control input-width"
                         name="img"
                         placeholder="Path ảnh phim"
+                        value="{{Film.img}}"
                     />
                 </div>
                 <div class="form-group">
@@ -37,6 +40,7 @@
                         class="form-control input-width"
                         name="trailer"
                         placeholder="Trailer phim"
+                        value="{{Film.trailer}}"
                     />
                 </div>
                 <div class="form-group">
@@ -45,7 +49,8 @@
                         type="text"
                         class="form-control input-width"
                         name="full"
-                        placeholder="Trailer phim"
+                        placeholder="Full video phim"
+                        value="{{Film.full}}"
                     />
                 </div>
                 <div class="form-group">
@@ -57,7 +62,7 @@
                         class="form-control input-width"
                         name="moTa"
                         placeholder="Mô tả"
-                    ></textarea>
+                    >{{Film.moTa}}</textarea>
                 </div>
                 <div class="form-group">
                     <label class="label" for="thoiLuong">
@@ -67,6 +72,7 @@
                         class="form-control input-width"
                         name="thoiLuong"
                         placeholder="Thời lượng phim"
+                        value="{{Film.thoiLuong}}"
                     />
                 </div>
                 <div class="form-group">
@@ -76,6 +82,7 @@
                         class="form-control input-width"
                         name="soTap"
                         placeholder="Số tập phim"
+                        value="{{Film.soTap}}"
                     />
                 </div>
                 <div class="form-group">
@@ -85,6 +92,7 @@
                         class="form-control input-width"
                         name="quocGia"
                         placeholder="Quốc gia"
+                        {{Film.quocGia}}
                     />
                 </div>
                 <div class="form-group">
@@ -95,6 +103,7 @@
                         class="form-control input-width"
                         name="namSuatBan"
                         placeholder="Năm xuất bản phim"
+                        {{Film.namSuatBan}}
                     />
                 </div>
                 <div class="form-group">
@@ -105,6 +114,7 @@
                         class="form-control input-width"
                         name="ngayCongChieu"
                         placeholder="Ngày công chiếu phim"
+                        {{Film.ngayCongChieu}}
                     />
                 </div>
                 <div class="form-group">
@@ -114,6 +124,7 @@
                         class="form-control input-width"
                         name="theLoai"
                         placeholder="Thể loại phim"
+                        {{Film.theLoai}}
                     />
                 </div>
                 <div class="form-group">
@@ -123,6 +134,7 @@
                         class="form-control input-width"
                         name="daoDien"
                         placeholder="Đạo diễn phim"
+                        {{Film.daoDien}}
                     />
                 </div>
                 <div class="form-group">
@@ -133,6 +145,7 @@
                         class="form-control input-width"
                         name="dienVien"
                         placeholder="Diễn viên đóng phim"
+                        {{Film.dienVien}}
                     />
                 </div>
                 <div class="form-group">
@@ -143,6 +156,7 @@
                         class="form-control input-width"
                         name="lichChieu"
                         placeholder="Lịch chiếu phim"
+                        {{Film.lichChieu}}
                     />
                 </div>
                 <div class="form-group">
@@ -152,6 +166,7 @@
                         class="form-control input-width"
                         name="trangweb"
                         placeholder="Trang web phim"
+                        {{Film.trangweb}}
                     />
                 </div>
                 <button

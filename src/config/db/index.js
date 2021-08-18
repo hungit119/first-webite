@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const uri = 'mongodb+srv://hungtran:1192002@cluster0.ilmtf.mongodb.net/webp?retryWrites=true&w=majority';
+const uri = 'mongodb://localhost:27017/MyDB';
 
 async function connect() {
     try {

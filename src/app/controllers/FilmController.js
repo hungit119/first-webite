@@ -1,31 +1,15 @@
 const { multipleMongooseToObject } = require('../../util/mongoose')
 const Film = require('../../resources/models/filmCollections');
-const FilmHD = require('../../resources/models/filmsHD.model');
-
 class FilmController {
-  async index(req, res, next) {
-    let collections = [Film, FilmHD];
-    let enCollections = [];
-    for (let i = 0; i < collections.length; i++) {
-      await collections[i].find({}, function (err, foundCollection) {
-        if (err) {
-          console.log(err);
-        }
-        else {
-          enCollections[i] = foundCollection;
-        }
+  index(req,res,next){
+    Film.find({})
+      .then(films => {
+        res.render('films',{films:multipleMongooseToObject(films)});
       })
-    }
-    res.render('films', {
-      films: multipleMongooseToObject(enCollections[0]),
-      filmsHD: multipleMongooseToObject(enCollections[1])
-    })
+      .catch(next);
   }
   add(req, res) {
     res.render('addFilm');
-  }
-  addDC(req,res,next){
-    res.render('addFilmDC');
   }
   data(req, res, next) {
     const film = new Film(req.body);
@@ -33,16 +17,6 @@ class FilmController {
       .save()
       .then(() => {
         console.log('Phim đã được lưu vào database');
-        res.redirect('/films');
-      })
-      .catch(next);
-  }
-  dataDC(req,res,next){
-    const filmDC = new FilmHD(req.body);
-    filmDC
-      .save()
-      .then(() => {
-        console.log('Phim Đề Cử đã được lưu vào database');
         res.redirect('/films');
       })
       .catch(next);
@@ -55,25 +29,16 @@ class FilmController {
       })
       .catch(next);
   }
-  detailDC(req,res,next){
-    FilmHD.findById(req.params.id)
-      .then((Films) => {
-        const filmsDC = Films.toObject();
-        res.render('detailDC', { filmsDC });
+  delete(req,res,next){
+    res.send("DELETE");
+  }
+  edit(req,res,next){
+    Film.findById(req.params.id)
+      .then(films => {
+        const Film = films.toObject();
+        res.render('edit',{Film});
       })
       .catch(next);
-  }
-  phimTC(req, res, next) {
-    res.render('phimTC')
-  }
-  phimHD(req, res, next) {
-    res.render('phimHD')
-  }
-  phimNMCC(req, res, next) {
-    res.render('phimNMCC')
-  }
-  phimCR(req, res, next) {
-    res.render('phimCR')
   }
 }
 
