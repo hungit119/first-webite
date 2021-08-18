@@ -14,11 +14,30 @@
             <li class="item-nav"><a href="/films/phimHD" class="link-navs">Phim Hành Động</a></li>
             <li class="item-nav"><a href="/films/phimNMCC" class="link-navs">Nước mắt chan cơm</a></li>
             <li class="item-nav"><a href="/films/phimCR" class="link-navs">Phim chiếu rạp</a></li>
+            <li class="item-nav option-dr" id="option-dd" onclick="option()">
+                <a href="#" class="link-navs">Tùy chọn</a>
+                <div class="drop-down-op" id="item-op-dd">
+                    <ul class="list-dr">
+                        <li class="item-dr">
+                            <a href="/films">
+                                <i class="fas fa-clipboard-list color-icon"></i>
+                                Danh Sách Phim
+                            </a>
+                        </li>
+                        <li class="item-dr">
+                            <a href="#">
+                                <i class="fas fa-user-circle color-icon"></i>
+                                Tài Khoản
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
         </ul>
     </div>
     <span class="nav-menu">
         <a href="javascript:void(0)" class="btnOpen" onclick="opennav()" style="color: #FEFEFE;">
-        <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i>
         </a>
         <div class="content-menu-sidebar" id="MySlide">
             <ul class="list-item-menu">
@@ -47,13 +66,8 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="">
+                    <a href="/films">
                         Danh sách phim
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="">
-                        Thêm Phim
                     </a>
                 </li>
                 <div class="dropdown-divider"></div>
@@ -66,11 +80,14 @@
         </div>
     </span>
     <script>
-       function opennav(){
-           document.getElementById('MySlide').style.marginRight = "0%";
-       }
-       function closeNav(){
-           document.getElementById('MySlide').style.marginRight = "-100%";
-       }
+        function opennav() {
+            document.getElementById('MySlide').style.marginRight = "0%";
+        }
+        function closeNav() {
+            document.getElementById('MySlide').style.marginRight = "-100%";
+        }
+        function option(){
+            document.getElementById('item-op-dd').classList.toggle('show')
+        }
     </script>
 </header>
