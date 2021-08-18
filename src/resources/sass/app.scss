@@ -187,6 +187,29 @@ header {
     color: #fefefe;
     text-align: center;
 }
+//SIDE BAR
+.img-sidbars{
+    width: 60px;
+    height: 80px;
+    border-radius: 5px;
+}
+.text-body{
+    color: #fefefe;
+    font-size: 1rem;
+    margin: 0;padding: 0;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+}
+.star-side{
+}
+.list-star-side{
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+}
 //DEATAIL
 .content-detail {
     margin-top: 100px;

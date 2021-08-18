@@ -28,24 +28,24 @@ app.set('views', path.join(__dirname, 'resources/views'));
 //
 async function addData() {
   const newFilm = {
-    name: "Anh đợi em nơi tận cùng của thời gian",
-    img: "https://phimle.vn/wp-content/uploads/2020/10/Anh-Se-Doi-Em-Noi-Tan-Cung-Thoi-Gian-300x450.jpeg",
-    rate: "9.7",
-    thoiLuong: "115 phút",
-    trailer: "iYOxPxtLFN8",
+    name: "Titanic",
+    img: "https://image.phunuonline.com.vn/fckeditor/upload/2020/20200324/images/kia-titanic-dang-chim-va-ban-_1585085632.jpg",
+    rate: "10",
+    thoiLuong: "189 phút",
+    trailer: "3gK_2XdjOdY",
     full: "",
-    moTa: "Anh sẽ đợi em nơi tận cùng thời gian - là bộ phim do Diêu Đình Đình chịu trách nhiệm chỉ đạo, với Giang Chí Cường làm giám chế, diễn viên chính trong bộ phim là Lý Nhất Đồng và Lý Hồng Kỳ. Nam chính Lý Hồng Kỳ từng 3 lần được đề cử giải Kim Mã, nữ chính Lý Nhất Đồng cũng được công nhận là tiểu hoa đán rất có thực lực về mặt diễn xuất.Đạo diễn Diêu Đình Đình từng tiết lộ, lúc đầu khi mới đọc tiểu thuyết nguyên tác, bối cảnh tình yêu kỳ ảo và tình yêu, cùng sự ấm áp làm cảm động người khác đã đánh động anh và khiến anh hạ quyết tâm đem tiểu thuyết này làm thành phim điện ảnh tình yêu vừa hài hước vừa bi thương.Bộ phim được công chiếu vào ngày lễ Thất Tịch đã làm điên đảo phòng vé nội địa, khi doanh thu đã đạt hơn 200 triệu NDT trong vòng 6 giờ kể từ khi công chiếu, lọt vào top 10 bộ phim có doanh thu phòng vé cao nhất trong ngày đầu công chiếu của lịch sử phim nội địa Trung Quốc.",
+    moTa: "Titanic là một chiếc tàu biển chở khách của Công ty White Star Line được đóng tại xưởng đóng tàu Harland and Wolff ở Belfast và được thiết kế để cạnh tranh ...",
     soTap: "",
-    quocGia: "Trung Quốc",
-    namSuatBan: "2020",
-    ngayCongChieu: "22-7-2020",
+    quocGia: "Mỹ",
+    namSuatBan: "2008",
+    ngayCongChieu: "23-9-2008",
     theLoai: "phim tình cảm",
-    daoDien: "Diêu Đình Đình",
+    daoDien: "James Cameron",
     dienVien: "",
     lichChieu: "",
     trangweb: ""
   }
-  const Films = require('./resources/models/filmCollections')
+  const Films = require('./resources/models/Films/filmDeCuCollections');
   const film = new Films(newFilm);
   film.save()
     .then(film => {
@@ -55,7 +55,6 @@ async function addData() {
       console.log("ERROR !!!");
     })
 }
-
 
 
 router(app)
