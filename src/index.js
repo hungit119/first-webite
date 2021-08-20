@@ -4,12 +4,13 @@ const handlebars = require('express-handlebars')
 const path = require('path')
 const router = require('./routes')
 const db = require('./config/db')
+const methodOverride = require('method-override') 
 
 const app = express()
 const port = 3005
 
 db.connect()
-
+app.use(methodOverride('_method'))
 
 app.use(express.urlencoded({
   extended: true

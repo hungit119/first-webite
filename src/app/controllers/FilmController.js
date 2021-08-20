@@ -33,6 +33,11 @@ class FilmController {
       })
       .catch(next);
   }
+  dataEdit(req, res, next){
+    Film.updateOne({_id: req.params.id}, req.body)
+      .then(() => res.redirect('/films'))
+      .catch(next);
+  }
   detail(req, res, next) {
     Film.findById(req.params.id)
       .then((Films) => {
@@ -42,7 +47,11 @@ class FilmController {
       .catch(next);
   }
   delete(req,res,next){
-    res.send("DELETE");
+    Film.deleteOne({_id: req.params.id})
+      .then(() =>{
+        res.redirect('back');
+      })
+      .catch(next);
   }
   edit(req,res,next){
     Film.findById(req.params.id)

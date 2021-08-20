@@ -2,7 +2,7 @@
     <h1 style="color:#F1B722;">Sửa phim <span class="badge badge-secondary">EDIT</span></h1> 
     <div class="row">
         <div class="colum-12">
-            <form method="POST" action="/films/data">
+            <form method="POST" action="/films/update/{{Film._id}}?_method=PUT">
                 <div class="form-group">
                     <label class="label" for="name"> Tên:</label>
                     <input
@@ -92,7 +92,7 @@
                         class="form-control input-width"
                         name="quocGia"
                         placeholder="Quốc gia"
-                        {{Film.quocGia}}
+                        value="{{Film.quocGia}}"
                     />
                 </div>
                 <div class="form-group">
@@ -103,7 +103,7 @@
                         class="form-control input-width"
                         name="namSuatBan"
                         placeholder="Năm xuất bản phim"
-                        {{Film.namSuatBan}}
+                        value="{{Film.namSuatBan}}"
                     />
                 </div>
                 <div class="form-group">
@@ -114,7 +114,7 @@
                         class="form-control input-width"
                         name="ngayCongChieu"
                         placeholder="Ngày công chiếu phim"
-                        {{Film.ngayCongChieu}}
+                        value="{{Film.ngayCongChieu}}"
                     />
                 </div>
                 <div class="form-group">
@@ -124,7 +124,7 @@
                         class="form-control input-width"
                         name="theLoai"
                         placeholder="Thể loại phim"
-                        {{Film.theLoai}}
+                        value="{{Film.theLoai}}"
                     />
                 </div>
                 <div class="form-group">
@@ -134,7 +134,7 @@
                         class="form-control input-width"
                         name="daoDien"
                         placeholder="Đạo diễn phim"
-                        {{Film.daoDien}}
+                        value="{{Film.daoDien}}"
                     />
                 </div>
                 <div class="form-group">
@@ -145,7 +145,7 @@
                         class="form-control input-width"
                         name="dienVien"
                         placeholder="Diễn viên đóng phim"
-                        {{Film.dienVien}}
+                        value="{{Film.dienVien}}"
                     />
                 </div>
                 <div class="form-group">
@@ -156,7 +156,7 @@
                         class="form-control input-width"
                         name="lichChieu"
                         placeholder="Lịch chiếu phim"
-                        {{Film.lichChieu}}
+                        value="{{Film.lichChieu}}"
                     />
                 </div>
                 <div class="form-group">
@@ -166,13 +166,13 @@
                         class="form-control input-width"
                         name="trangweb"
                         placeholder="Trang web phim"
-                        {{Film.trangweb}}
+                        value="{{Film.trangweb}}"
                     />
                 </div>
                 <button
                     type="submit"
                     class="btn btn-primary btn-cus"
-                >Thêm</button>
+                >Update</button>
             </form>
         </div>
     </div>

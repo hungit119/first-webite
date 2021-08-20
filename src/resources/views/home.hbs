@@ -99,33 +99,35 @@
             <div class="row side-right">
                 {{#each data2}}
                 <div class="col-12">
-                    <div class="media">
-                        <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
-                        <div class="media-body">
-                            <dir class="text-body">
-                                {{this.name}}
-                            </dir>
-                            <div class="star-side">
-                                <ul class="list-star-side">
-                                    <li>
-                                        <i class="fas fa-star active-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star active-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star active-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star active-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star active-star"></i>
-                                    </li>
-                                </ul>
+                    <a href="/films/detailDC/{{this._id}}">
+                        <div class="media">
+                            <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <dir class="text-body">
+                                    {{this.name}}
+                                </dir>
+                                <div class="star-side">
+                                    <ul class="list-star-side">
+                                        <li>
+                                            <i class="fas fa-star active-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star active-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star active-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star active-star"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star active-star"></i>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 {{/each}}
             </div>
