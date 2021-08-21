@@ -1,27 +1,26 @@
-const { multipleMongooseToObject } = require('../../util/mongoose')
 const Film = require('../../resources/models/Films/filmCollections');
-const FilmDeCu = require('../../resources/models/Films/filmDeCuCollections');
+const FilmsDeCu = require('../../resources/models/Films/filmDeCuCollections')
 class FilmController {
-  index(req,res,next){
-
-
-
-    // Film.find({})
-    //   .then(docs1s => {
-    //     FilmDeCu.find({})
-    //       .then(docs2s => {
-    //         const data1s = docs1s.map(docs1 => {
-    //           return docs1.toObject();
-    //         });
-    //         const data2s = docs2s.map(function (docs2) {
-    //           return docs2.toObject();
-    //         });
-    //         res.render('films',{data1:data1s,data2:data2s});
-    //         console.log("Render Success !!!");
-    //       })
-    //       .catch(next);
-    //   })
-    //   .catch(next);
+  index(req, res, next) {
+    Film.find({})
+      .then(docs1s => {
+        FilmsDeCu.find({})
+          .then(docs2s => {
+            const data1s = docs1s.map(docs1 => {
+              return docs1.toObject();
+            });
+            const data2s = docs2s.map(function (docs2) {
+              return docs2.toObject();
+            });
+            res.render('films', {
+              data1: data1s,
+              data2: data2s
+            });
+            console.log("Render Success !!!");
+          })
+          .catch(next);
+      })
+      .catch(next);
   }
   add(req, res) {
     res.render('addFilm');
@@ -36,8 +35,10 @@ class FilmController {
       })
       .catch(next);
   }
-  dataEdit(req, res, next){
-    Film.updateOne({_id: req.params.id}, req.body)
+  dataEdit(req, res, next) {
+    Film.updateOne({
+        _id: req.params.id
+      }, req.body)
       .then(() => res.redirect('/films'))
       .catch(next);
   }
@@ -45,22 +46,28 @@ class FilmController {
     Film.findById(req.params.id)
       .then((Films) => {
         const films = Films.toObject();
-        res.render('detail', { films });
+        res.render('detail', {
+          films
+        });
       })
       .catch(next);
   }
-  delete(req,res,next){
-    Film.deleteOne({_id: req.params.id})
-      .then(() =>{
+  delete(req, res, next) {
+    Film.deleteOne({
+        _id: req.params.id
+      })
+      .then(() => {
         res.redirect('back');
       })
       .catch(next);
   }
-  edit(req,res,next){
+  edit(req, res, next) {
     Film.findById(req.params.id)
       .then(films => {
         const Film = films.toObject();
-        res.render('edit',{Film});
+        res.render('edit', {
+          Film
+        });
       })
       .catch(next);
   }

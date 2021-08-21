@@ -2,71 +2,71 @@ const mongoose = require('mongoose');
 const Schema  = mongoose.Schema
 
 const FilmDeCu = new Schema({
-    name:{
+    nameDC:{
         type:String,
         default:"N/A"
     },
-    img:{
+    imgDC:{
         type:String,
         default:"N/A"
     },
-    rate:{
+    rateDC:{
         type:String,
         default:"N/A"
     },
-    thoiLuong:{
+    thoiLuongDC:{
         type:String,
         default:"N/A"
     },
-    trailer:{
+    trailerDC:{
         type:String,
         default:"N/A"
     },
-    full:{
+    fullDC:{
         type:String,
         default:"N/A"
     },
-    moTa:{
+    moTaDC:{
         type:String,
         default:"N/A"
     },
-    soTap:{
+    soTapDC:{
         type:String,
         default:"N/A"
     },
-    quocGia:{
+    quocGiaDC:{
         type:String,
         default:"N/A"
     },
-    namSuatBan:{
+    namSuatBanDC:{
         type:String,
         default:"N/A"
     },
-    ngayCongChieu:{
+    ngayCongChieuDC:{
         type:String,
         default:"N/A"
     },
-    theLoai:{
+    theLoaiDC:{
         type:String,
         default:"N/A"
     },
-    daoDien:{
+    daoDienDC:{
         type:String,
         default:"N/A"
     },
-    dienVien:{
+    dienVienDC:{
         type:String,
         default:"N/A"
     },
-    lichChieu:{
+    lichChieuDC:{
         type:String,
         default:"N/A"
     },
-    trangweb:{
+    trangwebDC:{
         type:String,
         default:"yeuphim.com"
     },
 },
 { timestamps: { createdAt: 'created_at' } });
 
-module.exports = mongoose.model('FilmDeCu',FilmDeCu);
+module.exports = mongoose.model('FilmDeCu',FilmDeCu,'filmsDeCu');

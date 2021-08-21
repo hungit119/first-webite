@@ -1,0 +1,179 @@
+<div class="container content-add mt-4">
+    <h1 style="color:#F1B722;">Sửa phim <span class="badge badge-secondary">EDIT</span></h1> 
+    <div class="row">
+        <div class="colum-12">
+            <form method="POST" action="/films/updateDC/{{Film._id}}?_method=PUT">
+                <div class="form-group">
+                    <label class="label" for="name"> Tên:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="nameDC"
+                        placeholder="Tên phim"
+                        value="{{Film.nameDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="rate">Rate:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="rateDC"
+                        placeholder="Rate phim"
+                        value="{{Film.rateDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="img"> Path ảnh:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="imgDC"
+                        placeholder="Path ảnh phim"
+                        value="{{Film.imgDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="trailer">Trailer:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="trailerDC"
+                        placeholder="Trailer phim"
+                        value="{{Film.trailerDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="full">Full movie:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="fullDC"
+                        placeholder="Full video phim"
+                        value="{{Film.fullDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="moTa"> Mô tả:</label>
+                    <textarea
+                        cols="30"
+                        rows="5"
+                        type="text"
+                        class="form-control input-width"
+                        name="moTaDC"
+                        placeholder="Mô tả"
+                    >{{Film.moTa}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label class="label" for="thoiLuong">
+                        Thời lượng:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="thoiLuongDC"
+                        placeholder="Thời lượng phim"
+                        value="{{Film.thoiLuongDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="soTap">Số tập:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="soTapDC"
+                        placeholder="Số tập phim"
+                        value="{{Film.soTapDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="quocGia">Quốc gia:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="quocGiaDC"
+                        placeholder="Quốc gia"
+                        value="{{Film.quocGiaDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="namSuatban">
+                        Năm xuất bản:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="namSuatBanDC"
+                        placeholder="Năm xuất bản phim"
+                        value="{{Film.namSuatBanDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="ngayCongChieu">
+                        Ngày công chiếu:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="ngayCongChieuDC"
+                        placeholder="Ngày công chiếu phim"
+                        value="{{Film.ngayCongChieuDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="theLoai"> Thể loại:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="theLoaiDC"
+                        placeholder="Thể loại phim"
+                        value="{{Film.theLoaiDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="daoDien"> Đạo diễn:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="daoDienDC"
+                        placeholder="Đạo diễn phim"
+                        value="{{Film.daoDienDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="dienVien">
+                        Diễn viên:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="dienVienDC"
+                        placeholder="Diễn viên đóng phim"
+                        value="{{Film.dienVienDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="lichChieu">
+                        Lịch chiếu:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="lichChieuDC"
+                        placeholder="Lịch chiếu phim"
+                        value="{{Film.lichChieuDC}}"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="trangweb"> Trang phim:</label>
+                    <input
+                        type="text"
+                        class="form-control input-width"
+                        name="trangwebDC"
+                        placeholder="Trang web phim"
+                        value="{{Film.trangwebDC}}"
+                    />
+                </div>
+                <button
+                    type="submit"
+                    class="btn btn-primary btn-cus"
+                >Update</button>
+            </form>
+        </div>
+    </div>
+</div>

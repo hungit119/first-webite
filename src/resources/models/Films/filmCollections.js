@@ -69,4 +69,4 @@ const Film = new Schema({
 },
 { timestamps: { createdAt: 'created_at' } });
 
-module.exports = mongoose.model('Film',Film);
+module.exports = mongoose.model('Film',Film,'films');

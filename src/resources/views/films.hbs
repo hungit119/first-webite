@@ -33,7 +33,7 @@
             <button class="btn btn-success">Thêm Phim vào danh sách</button>
         </a>
     </div>
-    {{!-- <div class="colum-12">
+    <div class="colum-12">
         <div class="head-list">
             <p class="text-head-list">
                 Danh sách phim đề cử
@@ -53,20 +53,20 @@
                 {{#each data2}}
                 <tr>
                     <th scope="row">{{@index}}</th>
-                    <td>{{this.name}}</td>
-                    <td>{{this.rate}}</td>
-                    <td>{{this.theLoai}}</td>
-                    <td><a href="#" class="btn-xoa" data-toggle="modal" data-target="#exampleModal"
-                            data-id="{{this._id}}">Xóa</a></td>
-                    <td><a href="films/edit/{{this._id}}" class="btn-sua">Sửa</a></td>
+                    <td>{{this.nameDC}}</td>
+                    <td>{{this.rateDC}}</td>
+                    <td>{{this.theLoaiDC}}</td>
+                    <td><a href="#" class="btn-xoa" data-toggle="modal" data-target="#delete-films"
+                            data-iddc="{{this._id}}">Xóa</a></td>
+                    <td><a href="films/editDC/{{this._id}}" class="btn-sua">Sửa</a></td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
-        <a href="/films/add">
-            <button class="btn btn-success">Thêm Phim vào danh sách</button>
+        <a href="/films/addDC">
+            <button class="btn btn-success">Thêm Phim vào danh sách phim đề cử</button>
         </a>
-    </div> --}}
+    </div>
 </div>
 <div class="modal" tabindex="-1" role="dialog" id="delete-films">
     <div class="modal-dialog" role="document">
@@ -96,13 +96,30 @@
         $('#delete-films').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
             var id = button.data('id')
+
             filmsID = id;
         })
-
         var btnDelete = document.getElementById('btn-delete-films');
         btnDelete.onclick = function(){
             dlef.action = '/films/' + filmsID + '?_method=DELETE'
             dlef.submit();
+        }
+    })
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var filmsDCID;
+        var dlef = document.getElementById('dele')
+        $('#delete-films').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('iddc')
+            filmsDCID = id;
+        })
+        var btnDelete = document.getElementById('btn-delete-films');
+        btnDelete.onclick = function(){
+            dlef.action = '/films/DC/' + filmsDCID + '?_method=DELETE'
+            dlef.submit()
         }
     })
 
