@@ -1,17 +1,24 @@
-const mongoose = require('mongoose')
-const uri = 'mongodb://localhost:27017/MyDB';
+const mysql = require('mysql')
 
 async function connect() {
-    try {
-        mongoose.connect(uri, {
-            useUnifiedTopology: true,
-            useNewUrlParser: true,
-            useCreateIndex: true,
-        });
-        console.log("Connect Successfull !!");
-    } catch (error) {
-        console.log("Connect Fail !");
-    }
+    var con = mysql.createConnection({
+        host:"localhost",
+        port:"3306",
+        user:"root",
+        password:"1192002",
+        database:"mydb"
+    });
+    con.connect(function (err) {
+        if(err){
+            console.log("Connect fail !!!");
+        }
+        else{
+            console.log("Connect Successfully !!!");
+        }
+    });
+    con.end(function(err){
+        if(err) throw err
+        console.log("Closed !!");
+    })
 }
-
-module.exports = { connect }
+module.exports = { connect}
