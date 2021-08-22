@@ -1,10 +1,21 @@
-const Film = require('../../resources/models/Films/filmCollections');
-const FilmsDeCu = require('../../resources/models/Films/filmDeCuCollections')
+const filmsType = require('../../resources/models/Phim/films.type');
+const filmsRegion = require('../../resources/models/Phim/films.region');
+const filmsYear = require('../../resources/models/Phim/films.year');
+const filmsCategory = require('../../resources/models/Phim/films.category');
+const films = require('../../resources/models/Phim/films');
 class FilmController {
   index(req, res, next) {
-    Film.find({})
+    // const film = await films.find({}).populate('theLoai')
+    // // console.log(film);  
+    // const data1 = film.map((data) => {
+    //     return data.toObject();
+    //   }) 
+    //   res.render('films',{data1})
+    films.find({}).populate('theLoai')
       .then(docs1s => {
-        FilmsDeCu.find({})
+        films.find({
+            category: '61220f53e917943b903767f9'
+          }).populate('category')
           .then(docs2s => {
             const data1s = docs1s.map(docs1 => {
               return docs1.toObject();
@@ -25,25 +36,73 @@ class FilmController {
   add(req, res) {
     res.render('addFilm');
   }
-  data(req, res, next) {
-    const film = new Film(req.body);
-    film
-      .save()
-      .then(() => {
-        console.log('Phim đã được lưu vào database');
-        res.redirect('/films');
-      })
-      .catch(next);
+  async data(req, res, next) {
+    const createType = await filmsType.findOne({
+      Tenloai: req.body.theLoai
+    })
+    const createRegion = await filmsRegion.findOne({
+      region: req.body.quocGia
+    })
+    const createYear = await filmsYear.findOne({
+      year: req.body.namSuatBan
+    })
+    const createCategory = await filmsCategory.findOne({
+      category: req.body.category
+    })
+
+    const createFilm = await films.create({
+      theLoai: createType._id,
+      quocGia: createRegion._id,
+      namSuatBan: createYear._id,
+      category: createCategory._id,
+      name: req.body.name,
+      img: req.body.img,
+      rate: req.body.rate,
+      thoiLuong: req.body.thoiLuong,
+      trailer: req.body.trailer,
+      full: req.body.full,
+      moTa: req.body.moTa,
+      daoDien: req.body.daoDien
+    })
+    res.redirect('films')
   }
-  dataEdit(req, res, next) {
-    Film.updateOne({
+  async dataEdit(req, res, next) {
+    const createType = await filmsType.findOne({
+      Tenloai: req.body.theLoai
+    })
+    const createRegion = await filmsRegion.findOne({
+      region: req.body.quocGia
+    })
+    const createYear = await filmsYear.findOne({
+      year: req.body.namSuatBan
+    })
+    const createCategory = await filmsCategory.findOne({
+      category: req.body.category
+    })
+    films.updateOne({
         _id: req.params.id
-      }, req.body)
+      }, {
+        theLoai: createType._id,
+        quocGia: createRegion._id,
+        namSuatBan: createYear._id,
+        category: createCategory._id,
+        name: req.body.name,
+        img: req.body.img,
+        rate: req.body.rate,
+        thoiLuong: req.body.thoiLuong,
+        trailer: req.body.trailer,
+        full: req.body.full,
+        moTa: req.body.moTa,
+        daoDien: req.body.daoDien
+      })
       .then(() => res.redirect('/films'))
       .catch(next);
   }
   detail(req, res, next) {
-    Film.findById(req.params.id)
+    films.findById(req.params.id)
+      .populate('theLoai')
+      .populate('quocGia')
+      .populate('region')
       .then((Films) => {
         const films = Films.toObject();
         res.render('detail', {
@@ -53,7 +112,7 @@ class FilmController {
       .catch(next);
   }
   delete(req, res, next) {
-    Film.deleteOne({
+    films.deleteOne({
         _id: req.params.id
       })
       .then(() => {
@@ -62,7 +121,11 @@ class FilmController {
       .catch(next);
   }
   edit(req, res, next) {
-    Film.findById(req.params.id)
+    films.findById(req.params.id)
+      .populate('theLoai')
+      .populate('quocGia')
+      .populate('namSuatBan')
+      .populate('category')
       .then(films => {
         const Film = films.toObject();
         res.render('edit', {

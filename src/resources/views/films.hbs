@@ -21,7 +21,7 @@
                     <th scope="row">{{@index}}</th>
                     <td>{{this.name}}</td>
                     <td>{{this.rate}}</td>
-                    <td>{{this.theLoai}}</td>
+                    <td>{{this.theLoai.Tenloai}}</td>
                     <td><a href="#" class="btn-xoa" data-toggle="modal" data-target="#delete-films"
                             data-id="{{this._id}}">Xóa</a></td>
                     <td><a href="films/edit/{{this._id}}" class="btn-sua">Sửa</a></td>
@@ -29,9 +29,6 @@
                 {{/each}}
             </tbody>
         </table>
-        <a href="/films/add">
-            <button class="btn btn-success">Thêm Phim vào danh sách</button>
-        </a>
     </div>
     <div class="colum-12">
         <div class="head-list">
@@ -45,7 +42,7 @@
                     <th scope="col">STT</th>
                     <th scope="col">Tên phim</th>
                     <th scope="col">Rating</th>
-                    <th scope="col">Thể loại</th>
+                    <th scope="col">Danh mục</th>
                     <th scope="col" colspan="2">Tùy chọn</th>
                 </tr>
             </thead>
@@ -53,20 +50,20 @@
                 {{#each data2}}
                 <tr>
                     <th scope="row">{{@index}}</th>
-                    <td>{{this.nameDC}}</td>
-                    <td>{{this.rateDC}}</td>
-                    <td>{{this.theLoaiDC}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.rate}}</td>
+                    <td>{{this.category.category}}</td>
                     <td><a href="#" class="btn-xoa" data-toggle="modal" data-target="#delete-films"
-                            data-iddc="{{this._id}}">Xóa</a></td>
-                    <td><a href="films/editDC/{{this._id}}" class="btn-sua">Sửa</a></td>
+                            data-id="{{this._id}}">Xóa</a></td>
+                    <td><a href="films/edit/{{this._id}}" class="btn-sua">Sửa</a></td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
-        <a href="/films/addDC">
-            <button class="btn btn-success">Thêm Phim vào danh sách phim đề cử</button>
-        </a>
     </div>
+    <a href="/films/add">
+        <button class="btn btn-success">Thêm Phim vào danh sách</button>
+    </a>
 </div>
 <div class="modal" tabindex="-1" role="dialog" id="delete-films">
     <div class="modal-dialog" role="document">
@@ -87,39 +84,20 @@
         </div>
     </div>
 </div>
- <form method="POST" id="dele"></form>
+<form method="POST" id="dele"></form>
 <script>
-
     document.addEventListener('DOMContentLoaded', function () {
         var filmsID;
         var dlef = document.getElementById('dele')
         $('#delete-films').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
             var id = button.data('id')
-
             filmsID = id;
         })
         var btnDelete = document.getElementById('btn-delete-films');
-        btnDelete.onclick = function(){
+        btnDelete.onclick = function () {
             dlef.action = '/films/' + filmsID + '?_method=DELETE'
             dlef.submit();
-        }
-    })
-
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var filmsDCID;
-        var dlef = document.getElementById('dele')
-        $('#delete-films').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget) // Button that triggered the modal
-            var id = button.data('iddc')
-            filmsDCID = id;
-        })
-        var btnDelete = document.getElementById('btn-delete-films');
-        btnDelete.onclick = function(){
-            dlef.action = '/films/DC/' + filmsDCID + '?_method=DELETE'
-            dlef.submit()
         }
     })
 

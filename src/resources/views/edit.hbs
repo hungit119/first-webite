@@ -1,178 +1,86 @@
 <div class="container content-add mt-4">
-    <h1 style="color:#F1B722;">Sửa phim <span class="badge badge-secondary">EDIT</span></h1> 
+    <h1 style="color:#F1B722;">Sửa phim <span class="badge badge-secondary">EDIT</span></h1>
     <div class="row">
         <div class="colum-12">
             <form method="POST" action="/films/update/{{Film._id}}?_method=PUT">
                 <div class="form-group">
-                    <label class="label" for="name"> Tên:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="name"
-                        placeholder="Tên phim"
-                        value="{{Film.name}}"
-                    />
-                </div>
-                <div class="form-group">
-                    <label class="label" for="rate">Rate:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="rate"
-                        placeholder="Rate phim"
-                        value="{{Film.rate}}"
-                    />
-                </div>
-                <div class="form-group">
-                    <label class="label" for="img"> Path ảnh:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="img"
-                        placeholder="Path ảnh phim"
-                        value="{{Film.img}}"
-                    />
-                </div>
-                <div class="form-group">
-                    <label class="label" for="trailer">Trailer:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="trailer"
-                        placeholder="Trailer phim"
-                        value="{{Film.trailer}}"
-                    />
-                </div>
-                <div class="form-group">
-                    <label class="label" for="full">Full movie:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="full"
-                        placeholder="Full video phim"
-                        value="{{Film.full}}"
-                    />
-                </div>
-                <div class="form-group">
-                    <label class="label" for="moTa"> Mô tả:</label>
-                    <textarea
-                        cols="30"
-                        rows="5"
-                        type="text"
-                        class="form-control input-width"
-                        name="moTa"
-                        placeholder="Mô tả"
-                    >{{Film.moTa}}</textarea>
-                </div>
-                <div class="form-group">
-                    <label class="label" for="thoiLuong">
-                        Thời lượng:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="thoiLuong"
-                        placeholder="Thời lượng phim"
-                        value="{{Film.thoiLuong}}"
-                    />
-                </div>
-                <div class="form-group">
-                    <label class="label" for="soTap">Số tập:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="soTap"
-                        placeholder="Số tập phim"
-                        value="{{Film.soTap}}"
-                    />
+                    <label class="label" for="theLoai">Thể Loại:</label>
+                    <select name="theLoai" data-placeholder="Chọn Thể Loại:">
+                        <option value="phim tình cảm">phim tình cảm</option>
+                        <option value="phim hành động">phim hành động</option>
+                        <option value="phim chiếu rạp">phim chiếu rạp</option>
+                        <option value="phim nước mắt">phim nước mắt</option>
+                    </select>
+                    {{!-- <input type="text" class="form-control input-width" name="quocGia"
+                        placeholder="Quốc gia (bắt buộc)" /> --}}
                 </div>
                 <div class="form-group">
                     <label class="label" for="quocGia">Quốc gia:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="quocGia"
-                        placeholder="Quốc gia"
-                        value="{{Film.quocGia}}"
-                    />
+                    <select name="quocGia" data-placeholder="Chọn quốc gia:">
+                        <option value="Mỹ">Mỹ</option>
+                        <option value="Trung Quốc">Trung Quốc</option>
+                        <option value="Nhật Bản">Nhật Bản</option>
+                        <option value="Hàn Quốc">Hàn Quốc</option>
+                        <option value="Thái Lan">Thái Lan</option>
+                        <option value="Việt Nam">Việt Nam</option>
+                    </select>
+                    {{!-- <input type="text" class="form-control input-width" name="quocGia"
+                        placeholder="Quốc gia (bắt buộc)" /> --}}
                 </div>
                 <div class="form-group">
                     <label class="label" for="namSuatban">
                         Năm xuất bản:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="namSuatBan"
-                        placeholder="Năm xuất bản phim"
-                        value="{{Film.namSuatBan}}"
-                    />
+                    <input type="text" class="form-control input-width" name="namSuatBan"
+                        placeholder="Năm xuất bản phim" value="{{Film.namSuatBan.year}}" />
                 </div>
                 <div class="form-group">
-                    <label class="label" for="ngayCongChieu">
-                        Ngày công chiếu:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="ngayCongChieu"
-                        placeholder="Ngày công chiếu phim"
-                        value="{{Film.ngayCongChieu}}"
-                    />
+                    <label class="label" for="danhMuc">
+                        Danh mục phim:</label>
+                    <input type="text" class="form-control input-width" name="category"
+                        placeholder="Danh mục phim (bắt buộc)" value="{{Film.category.category}}"/>
                 </div>
                 <div class="form-group">
-                    <label class="label" for="theLoai"> Thể loại:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="theLoai"
-                        placeholder="Thể loại phim"
-                        value="{{Film.theLoai}}"
-                    />
+                    <label class="label" for="name"> Tên:</label>
+                    <input type="text" class="form-control input-width" name="name" placeholder="Tên phim"
+                        value="{{Film.name}}" />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="img"> Path ảnh:</label>
+                    <input type="text" class="form-control input-width" name="img" placeholder="Path ảnh phim"
+                        value="{{Film.img}}" />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="rate">Rate:</label>
+                    <input type="text" class="form-control input-width" name="rate" placeholder="Rate phim"
+                        value="{{Film.rate}}" />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="thoiLuong">
+                        Thời lượng:</label>
+                    <input type="text" class="form-control input-width" name="thoiLuong" placeholder="Thời lượng phim"
+                        value="{{Film.thoiLuong}}" />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="trailer">Trailer:</label>
+                    <input type="text" class="form-control input-width" name="trailer" placeholder="Trailer phim"
+                        value="{{Film.trailer}}" />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="full">Full movie:</label>
+                    <input type="text" class="form-control input-width" name="full" placeholder="Full video phim"
+                        value="{{Film.full}}" />
+                </div>
+                <div class="form-group">
+                    <label class="label" for="moTa"> Mô tả:</label>
+                    <textarea cols="30" rows="5" type="text" class="form-control input-width" name="moTa"
+                        placeholder="Mô tả">{{Film.moTa}}</textarea>
                 </div>
                 <div class="form-group">
                     <label class="label" for="daoDien"> Đạo diễn:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="daoDien"
-                        placeholder="Đạo diễn phim"
-                        value="{{Film.daoDien}}"
-                    />
+                    <input type="text" class="form-control input-width" name="daoDien" placeholder="Đạo diễn phim"
+                        value="{{Film.daoDien}}" />
                 </div>
-                <div class="form-group">
-                    <label class="label" for="dienVien">
-                        Diễn viên:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="dienVien"
-                        placeholder="Diễn viên đóng phim"
-                        value="{{Film.dienVien}}"
-                    />
-                </div>
-                <div class="form-group">
-                    <label class="label" for="lichChieu">
-                        Lịch chiếu:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="lichChieu"
-                        placeholder="Lịch chiếu phim"
-                        value="{{Film.lichChieu}}"
-                    />
-                </div>
-                <div class="form-group">
-                    <label class="label" for="trangweb"> Trang phim:</label>
-                    <input
-                        type="text"
-                        class="form-control input-width"
-                        name="trangweb"
-                        placeholder="Trang web phim"
-                        value="{{Film.trangweb}}"
-                    />
-                </div>
-                <button
-                    type="submit"
-                    class="btn btn-primary btn-cus"
-                >Update</button>
+                <button type="submit" class="btn btn-primary btn-cus">Update</button>
             </form>
         </div>
     </div>

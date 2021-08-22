@@ -55,7 +55,7 @@
                                 </p>
                             </div>
                             <div class="year color-text">
-                                ({{this.namSuatBan}})
+                                ({{this.namSuatBan.year}})
                             </div>
                             <div class="star">
                                 <ul class="list-star">
@@ -85,7 +85,7 @@
                     <div class="tag-film color-text">
                         <a href="" style="color: #FEFEFE;">
                             <i class="fas fa-tags" style="color: #C59A22;"></i>
-                            {{this.theLoai}}
+                            {{this.theLoai.Tenloai}}
                         </a>
                     </div>
                 </div>
@@ -99,12 +99,12 @@
             <div class="side-right">
                 {{#each data2}}
                 <div class="col-12 cardSide">
-                    <a href="/films/detailDC/{{this._id}}">
+                    <a href="/films/detail/{{this._id}}">
                         <div class="media">
-                            <img class="mr-3 img-sidbars" src="{{this.imgDC}}" alt="Generic placeholder image">
+                            <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
                             <div class="media-body">
                                 <dir class="text-body">
-                                    {{this.nameDC}}
+                                    {{this.name}}
                                 </dir>
                                 <div class="star-side">
                                     <ul class="list-star-side">

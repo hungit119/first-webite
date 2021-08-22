@@ -29,16 +29,8 @@
             <div class="tag-film color-text">
                 <a href="" style="color: #FEFEFE;">
                     <i class="fas fa-tags" style="color: #C59A22;"></i>
-                    {{films.theLoai}}
+                    {{films.theLoai.Tenloai}}
                 </a>
-            </div>
-            <div class="time">
-                <span class="icon">
-                    <i class="far fa-clock time-icon"></i>
-                </span>
-                <span class="text-SB">
-                    <p class="text-namSB">{{films.ngayCongChieu}}</p>
-                </span>
             </div>
             <div class="btn-play">
                 <a href="#trailer">
@@ -59,24 +51,16 @@
                         {{films.thoiLuong}}
                     </li>
                     <li class="item-content">
-                        <label for="">Số tập:</label>
-                        {{films.soTap}}
-                    </li>
-                    <li class="item-content">
                         <label for="">Năm sản xuất:</label>
-                        {{films.namSuatBan}}
+                        {{films.namSuatBan.year}}
                     </li>
                     <li class="item-content">
                         <label for="">Quốc gia:</label>
-                        {{films.quocGia}}
+                        {{films.quocGia.region}}
                     </li>
                     <li class="item-content">
                         <label for="">Thể loại:</label>
-                        {{films.theLoai}}
-                    </li>
-                    <li class="item-content">
-                        <label for="">Diễn viên:</label>
-                        {{films.dienVien}}
+                        {{films.theLoai.Tenloai}}
                     </li>
                 </ul>
             </div>
