@@ -40,33 +40,44 @@ class SiteController {
                           .populate('namSuatBan')
                           .populate('theLoai')
                           .then(docs6s => {
-                            const data1s = docs1s.map(docs1 => {
-                              return docs1.toObject();
-                            });
-                            const data2s = docs2s.map(function (docs2) {
-                              return docs2.toObject();
-                            });
-                            const data3s = docs3s.map(function (docs3) {
-                              return docs3.toObject();
-                            });
-                            const data4s = docs4s.map(function (docs4) {
-                              return docs4.toObject();
-                            });
-                            const data5s = docs5s.map(function (docs5) {
-                              return docs5.toObject();
-                            });
-                            const data6s = docs6s.map(function (docs6) {
-                              return docs6.toObject();
-                            });
-                            res.render('home', {
-                              data1: data1s,
-                              data2: data2s,
-                              data3: data3s,
-                              data4: data4s,
-                              data5: data5s,
-                              data6: data6s,
-                            });
-                            console.log("Render Success !!!");
+                            films.find({
+                                theLoai: '6121f68794fe3633bcb45559' //phim chiếu rạp
+                              })
+                              .populate('namSuatBan')
+                              .populate('theLoai')
+                              .then(docs7s => {
+                                const data1s = docs1s.map(docs1 => {
+                                  return docs1.toObject();
+                                });
+                                const data2s = docs2s.map(function (docs2) {
+                                  return docs2.toObject();
+                                });
+                                const data3s = docs3s.map(function (docs3) {
+                                  return docs3.toObject();
+                                });
+                                const data4s = docs4s.map(function (docs4) {
+                                  return docs4.toObject();
+                                });
+                                const data5s = docs5s.map(function (docs5) {
+                                  return docs5.toObject();
+                                });
+                                const data6s = docs6s.map(function (docs6) {
+                                  return docs6.toObject();
+                                });
+                                const data7s = docs7s.map(function (docs7) {
+                                  return docs7.toObject();
+                                });
+                                res.render('home', {
+                                  data1: data1s,
+                                  data2: data2s,
+                                  data3: data3s,
+                                  data4: data4s,
+                                  data5: data5s,
+                                  data6: data6s,
+                                  data7: data7s,
+                                });
+                                console.log("Render Success !!!");
+                              })
                           })
                       })
                   })

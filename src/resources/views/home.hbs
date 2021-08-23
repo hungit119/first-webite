@@ -1,8 +1,8 @@
 <div class="row">
     <div class="colum-12">
-        <form class="form">
+        <form class="form" action="/films/search">
             <div class="form-group colum-12">
-                <input type="text" name="search" class="input-search" placeholder="Bạn muốn xem gì ?" />
+                <input type="text" name="name" class="input-search" placeholder="Bạn muốn xem gì ?" />
                 <button type="submit" class="btn-search">Tìm kiếm</button>
             </div>
         </form>
@@ -344,43 +344,87 @@
             </div>
         </div>
         <div class="colum-3 side-bars-right">
-            <div class="head-side">
-                <p style="margin: 0;">Phim Đề Cử</p>
-            </div>
-            <div class="side-right">
-                {{#each data2}}
-                <div class="col-12 cardSide">
-                    <a href="/films/detail/{{this._id}}">
-                        <div class="media">
-                            <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
-                            <div class="media-body">
-                                <dir class="text-body">
-                                    {{this.name}}
-                                </dir>
-                                <div class="star-side">
-                                    <ul class="list-star-side">
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                    </ul>
+            <div class="row">
+                <div class="colum-12">
+                    <div class="head-side">
+                        <p style="margin: 0;">Phim Đề Cử</p>
+                    </div>
+                    <div class="side-right">
+                        {{#each data2}}
+                        <div class="col-12 cardSide">
+                            <a href="/films/detail/{{this._id}}">
+                                <div class="media">
+                                    <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <dir class="text-body">
+                                            {{this.name}}
+                                        </dir>
+                                        <div class="star-side">
+                                            <ul class="list-star-side">
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </a>
+                        {{/each}}
+                    </div>
                 </div>
-                {{/each}}
+                <div class="colum-12">
+                    <div class="head-side">
+                        <p style="margin: 0;">Phim Chiếu Rạp</p>
+                    </div>
+                    <div class="side-right">
+                        {{#each data7}}
+                        <div class="col-12 cardSide">
+                            <a href="/films/detail/{{this._id}}">
+                                <div class="media">
+                                    <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <dir class="text-body">
+                                            {{this.name}}
+                                        </dir>
+                                        <div class="star-side">
+                                            <ul class="list-star-side">
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

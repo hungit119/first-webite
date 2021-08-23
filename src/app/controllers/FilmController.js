@@ -152,6 +152,20 @@ class FilmController {
       })
       .catch(next);
   }
+  //[GET] films/search
+  search(req,res,next){
+    const find = req.query.name
+    films.find({name:find})
+      .populate('theLoai')
+      .populate('namSuatBan')
+      .then(filmFounds=>{
+        const filmsFound = filmFounds.map(film =>{
+          return film.toObject();
+        })
+        res.render('search',{filmsFound})
+      })
+      .catch(next)
+  }
 }
 
 module.exports = new FilmController();

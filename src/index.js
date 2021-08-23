@@ -9,7 +9,7 @@ const mongoose = require('./util/mongoose')
 db.connect();
 
 const app = express()
-const port = 3000
+const port = 3005
 
 app.use(methodOverride('_method'))
 

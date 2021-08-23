@@ -3,6 +3,8 @@ const route = express.Router()
 
 const filmController = require('../app/controllers/FilmController')
 
+// [GET] /films/search
+route.use('/search',filmController.search)
 // [DELETE] /films/:id
 route.delete('/:id',filmController.delete)
 // [GET] /films/edit/:id
