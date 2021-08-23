@@ -58,7 +58,10 @@ header {
   outline: none; }
 
 .text-head {
-  margin-top: 0; }
+  margin-top: 0;
+  padding-left: 0;
+  margin-left: 0 !important;
+  padding-bottom: 0; }
 
 .text-item {
   color: #f1b722;
@@ -361,6 +364,9 @@ header {
   justify-content: center;
   align-items: center;
   display: none; }
+
+.danhmuc {
+  height: 73px; }
 
 .list-navs {
   display: flex;

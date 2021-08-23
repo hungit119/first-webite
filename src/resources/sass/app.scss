@@ -2,18 +2,22 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
 body {
     background-color: #081b27;
 }
+
 .row::after {
     content: "";
     clear: both;
     display: table;
 }
+
 [class*="colum-"] {
     float: left;
     padding: 12px;
 }
+
 header {
     height: 80px;
     background-color: #0c2738;
@@ -22,34 +26,41 @@ header {
     justify-content: space-between;
     padding: 0 0 0 12px;
 }
+
 //Mobile
 [class*="colum-"] {
     width: 100%;
 }
+
 .logo {
     display: flex;
     align-items: center;
     font-size: 1rem;
     color: #fefefe;
 }
+
 .logo-img {
     width: 28px;
     height: 18px;
     margin-right: 4px;
 }
+
 .logo-text {
     margin: 0;
     font-size: 1.3rem;
 }
+
 .nav-menu {
     color: #fefefe;
     font-size: 1.5rem;
     padding: 22px 28px 22px 28px;
 }
+
 .form-group {
     display: flex;
     justify-content: space-between;
 }
+
 .input-search {
     width: 80%;
     border: none;
@@ -58,14 +69,20 @@ header {
     padding: 6px 12px;
     outline: none;
 }
+
 .text-head {
     margin-top: 0;
+    padding-left: 0;
+    margin-left: 0 !important;
+    padding-bottom: 0;
 }
+
 .text-item {
     color: #f1b722;
     font-size: 2rem;
     text-align: center;
 }
+
 .btn-search {
     width: 20%;
     border: none;
@@ -75,10 +92,12 @@ header {
     background-color: #3898ec;
     font-size: 13px;
 }
+
 .danh-muc-wrap {
     display: flex;
     justify-content: center;
 }
+
 .danh-muc {
     display: block;
     text-align: center;
@@ -89,88 +108,109 @@ header {
     font-size: 13px;
     color: #3b4344;
 }
+
 .danh-muc:hover {
     color: burlywood;
 }
+
 .active {
     color: #374550;
     background-color: #fefefe;
 }
+
 .body-home {
     margin-top: 60px;
 }
+
 .card-film {
     margin-top: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .img-film {
     width: 180px;
     height: 260px;
     border-radius: 8px;
 }
+
 .color-text {
     color: #fefefe;
 }
+
 .name-film {
     font-size: 1.4rem;
     line-height: 1.4;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     margin-bottom: 4px;
 }
+
 .img-content-film {
     text-align: center;
     margin: 12px 0;
 }
-.content-film {
-}
+
+.content-film {}
+
 .body {
     text-align: center;
 }
+
 .list-star {
     list-style: none;
     display: flex;
     justify-content: center;
     padding: 0;
 }
+
 .active-star {
     color: #f1b722;
 }
+
 .input-width {
     width: 60%;
 }
+
 .label-width {
     width: 40%;
 }
+
 .label {
     color: #fefefe;
     font-size: 1rem;
 }
+
 .content-add {
     margin: 48px 0;
 }
+
 .btn-cus {
     background-color: #f1b722;
     color: #000;
     border: none;
 }
+
 .btn-cus:hover {
     background-color: #000;
     color: #f1b722;
 }
+
 .border-r {
     border-radius: 5px;
 }
+
 .head-list {
     background-color: #fefefe;
     border-radius: 5px;
 }
+
 .text-head-list {
     color: #000;
     font-size: 1.4rem;
     text-align: center;
 }
+
 .btn-xoa {
     display: block;
     background-color: brown;
@@ -179,6 +219,7 @@ header {
     color: #fefefe;
     text-align: center;
 }
+
 .btn-sua {
     display: block;
     background-color: #3898ec;
@@ -187,75 +228,90 @@ header {
     color: #fefefe;
     text-align: center;
 }
+
 //SIDE BAR
-.img-sidbars{
+.img-sidbars {
     width: 70px;
     height: 100px;
     border-radius: 5px;
 }
-.cardSide{
+
+.cardSide {
     height: 100px;
     margin: 30px 0;
     padding: 0;
 }
-.text-body{
+
+.text-body {
     color: #fefefe;
     font-size: 1rem;
-    margin: 0;padding: 0;
+    margin: 0;
+    padding: 0;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     display: -webkit-box;
 }
-.star-side{
-}
-.list-star-side{
+
+.star-side {}
+
+.list-star-side {
     list-style: none;
     display: flex;
     justify-content: flex-start;
     padding: 0;
 }
+
 //DEATAIL
 .content-detail {
     margin-top: 100px;
 }
+
 .img-detail {
     text-align: center;
 }
+
 .img-dt {
     width: 240px;
     height: 350px;
     border-radius: 10px;
 }
+
 .text-name {
     font-size: 2rem;
     color: #fefefe;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
 .time-icon {
     color: #f1b722;
     font-size: 1.4rem;
     margin-top: 4px;
 }
+
 .text-namSB {
     color: #fefefe;
     font-size: 1.2rem;
     margin: 0 6px;
 }
+
 .time {
     display: flex;
     align-items: center;
 }
+
 .ifram-trailer {
     width: 100%;
     height: 200px;
 }
+
 .btn-play {
     margin: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .btn-trailer {
     margin-right: 6px;
     padding: 10px 12px;
@@ -265,6 +321,7 @@ header {
     outline: none !important;
     background-color: #3898ec;
 }
+
 .btn-xem {
     margin-right: 6px;
     padding: 10px 12px;
@@ -274,19 +331,23 @@ header {
     outline: none !important;
     background-color: #e46466;
 }
+
 .list-content {
     padding: 0;
     list-style: none;
 }
+
 .item-content {
     color: #fefefe;
     font-size: 1.2rem;
     line-height: 1.3rem;
 }
+
 .mota {
     font-size: 1.2rem;
     color: #9cabb6;
 }
+
 .input-search-ft {
     width: 90%;
     border: none;
@@ -294,32 +355,39 @@ header {
     padding: 12px 12px;
     text-align: center;
 }
+
 .search-icon {
     color: #fefefe;
     padding: 6px;
 }
+
 .footer-content {
     text-align: center;
 }
+
 .list-footer {
     text-align: center;
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .item-footer-link {
     color: #4091c9;
     font-size: 1.2rem;
 }
+
 .color-icon {
     color: #f1b722;
 }
+
 .footer-text {
     color: #f1b722;
     display: block;
     padding: 30px;
     text-align: center;
 }
+
 .content-menu-sidebar {
     background-color: #081b27;
     position: absolute;
@@ -333,6 +401,7 @@ header {
     transition: 0.5s;
     margin-right: -100%;
 }
+
 .close {
     width: 43px;
     height: 39px;
@@ -340,28 +409,35 @@ header {
     top: 21px;
     left: 21px;
 }
+
 .icon-close {
     font-size: 2rem;
     color: #fefefe;
 }
+
 .list-item-menu {
     list-style: none;
 }
+
 .item-menu a {
     color: #f1b722;
 
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
 .open {
     display: block;
 }
+
 .closeBtn {
     position: fixed;
     top: 26px;
 }
+
 .footer-social {
     margin-top: 100px;
 }
+
 .navs {
     width: 73%;
     display: flex;
@@ -369,6 +445,11 @@ header {
     align-items: center;
     display: none;
 }
+
+.danhmuc {
+    height: 73px;
+}
+
 .list-navs {
     display: flex;
     list-style: none;
@@ -379,62 +460,77 @@ header {
     font-size: 1.3rem;
     padding: 0;
 }
+
 .link-navs {
     color: #f1b722;
     text-decoration: none !important;
     font-weight: 600;
 }
+
 .link-navs:hover {
     color: #fefefe;
 }
+
 .active-navs {
     color: #fefefe;
 }
+
 //side right
 .side-bars-right {
     display: none;
 }
+
 .content-side-wrap {
     display: flex;
     padding-left: 10px;
 }
+
 .side-right {
     height: 500px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
     background-color: #0c222f;
     width: 12px;
 }
+
 ::-webkit-scrollbar-thumb {
     background-color: #666666;
 }
+
 .img-sidebars {
     width: 60px;
     height: 80px;
     border-radius: 5px;
 }
+
 .text-sidebars {
     color: #fefefe;
     font-size: 1rem;
 }
+
 .list-star-bars {
     float: left;
 }
+
 .head-side {
     color: #f1b722;
     font-size: 1.8rem;
 }
+
 .name-text-film {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     display: -webkit-box;
 }
+
 .option-dr {
     position: relative;
 }
+
 .drop-down-op {
     position: absolute;
     width: 218px;
@@ -446,13 +542,16 @@ header {
     border-radius: 11px;
     display: none;
 }
+
 .list-dr {
     list-style: none;
     padding-left: 24px;
 }
+
 .item-dr {
     margin: 12px 0;
 }
+
 .item-dr a {
     text-decoration: none !important;
     color: #fefefe;
@@ -460,9 +559,11 @@ header {
     cursor: pointer;
     margin-left: 6px;
 }
+
 .show {
     display: block;
 }
+
 // header
 //tablet sm
 //tablet
@@ -470,60 +571,78 @@ header {
     .colum-s-1 {
         width: 8.33333333%;
     }
+
     .colum-s-2 {
         width: 16.6666667%;
     }
+
     .colum-s-3 {
         width: 25%;
     }
+
     .colum-s-4 {
         width: 33.3333333%;
     }
+
     .colum-s-5 {
         width: 41.6666667%;
     }
+
     .colum-s-6 {
         width: 50%;
     }
+
     .colum-s-7 {
         width: 58.3333333%;
     }
+
     .colum-s-8 {
         width: 66.6666666%;
     }
+
     .colum-s-9 {
         width: 75%;
     }
+
     .colum-s-10 {
         width: 83.333333%;
     }
+
     .colum-s-11 {
         width: 91.666667%;
     }
+
     .colum-s-12 {
         width: 100%;
     }
+
     .logo-text {
         font-size: 2rem;
     }
+
     .logo-img {
         width: 80px;
         height: 55px;
     }
+
     .text-head {
         display: flex;
         align-items: flex-end;
         justify-content: center;
         margin: 0;
     }
+
     .text-item {
         font-size: 2.3rem;
         margin-bottom: 0;
         font-weight: 600;
+
     }
+
     .body-home {
         margin-top: 0;
     }
+
     .ifram-trailer {
         width: 100%;
         height: 500px;
@@ -535,55 +654,72 @@ header {
     .colum-1 {
         width: 8.33333333%;
     }
+
     .colum-2 {
         width: 16.6666667%;
     }
+
     .colum-3 {
         width: 25%;
     }
+
     .colum-4 {
         width: 33.3333333%;
     }
+
     .colum-5 {
         width: 41.6666667%;
     }
+
     .colum-6 {
         width: 50%;
     }
+
     .colum-7 {
         width: 58.3333333%;
     }
+
     .colum-8 {
         width: 66.6666666%;
     }
+
     .colum-9 {
         width: 75%;
     }
+
     .colum-10 {
         width: 83.333333%;
     }
+
     .colum-11 {
         width: 91.666667%;
     }
+
     .colum-12 {
         width: 100%;
     }
+
     .nav-menu {
         display: none;
     }
+
     .logo-text {
         font-size: 2rem;
     }
+
     .logo-img {
         width: 80px;
         height: 55px;
     }
+
     .navs {
         display: block;
     }
+
     .side-bars-right {
         display: block;
     }
+
     .text-head {
         margin-top: 0;
         display: flex;
@@ -591,14 +727,17 @@ header {
         justify-content: start;
         margin-left: 10px;
     }
+
     .text-item {
         font-size: 2.3rem;
         margin-bottom: 0;
         font-weight: 600;
     }
+
     .body-home {
         margin-top: 0;
     }
+
     .ifram-trailer {
         width: 100%;
         height: 700px;

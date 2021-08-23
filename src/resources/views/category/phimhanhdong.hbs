@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="colum-12">
+            <form class="form">
+                <div class="form-group colum-12">
+                    <input type="text" name="search" class="input-search" placeholder="Bạn muốn xem gì ?" />
+                    <button type="submit" class="btn-search">Tìm kiếm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="colum-12 text-head">
+            <p class="text-item">
+                Phim hành động
+            </p>
+        </div>
+        <div class="row colum-12">
+            {{#each data1}}
+            <div class="colum-s-6 colum-3 card-film">
+                <div class="content-film">
+                    <div class="img-content-film">
+                        <a href="/films/detail/{{this._id}}">
+                            <img src="{{this.img}}" alt="" class="img-film" />
+                        </a>
+                    </div>
+                    <div class="body">
+                        <div class="name-film-content">
+                            <p class="name-film color-text">
+                                <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;" class="name-text-film">
+                                    {{this.name}}
+                                </a>
+                            </p>
+                        </div>
+                        <div class="year color-text">
+                            ({{this.namSuatBan.year}})
+                        </div>
+                        <div class="star">
+                            <ul class="list-star">
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fas fa-star active-star"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="rate-film color-text">
+                            Rate :
+                            {{this.rate}}
+                        </span>
+                    </div>
+                </div>
+                <div class="tag-film color-text">
+                    <a href="" style="color: #FEFEFE;">
+                        <i class="fas fa-tags" style="color: #C59A22;"></i>
+                        {{this.theLoai.Tenloai}}
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

@@ -5,12 +5,6 @@ const filmsCategory = require('../../resources/models/Phim/films.category');
 const films = require('../../resources/models/Phim/films');
 class FilmController {
   index(req, res, next) {
-    // const film = await films.find({}).populate('theLoai')
-    // // console.log(film);  
-    // const data1 = film.map((data) => {
-    //     return data.toObject();
-    //   }) 
-    //   res.render('films',{data1})
     films.find({}).populate('theLoai')
       .then(docs1s => {
         films.find({
@@ -131,6 +125,23 @@ class FilmController {
         res.render('edit', {
           Film
         });
+      })
+      .catch(next);
+  }
+  // [GET] films/all
+  all(req, res, next) {
+    films.find({})
+      .populate('theLoai')
+      .populate('quocGia')
+      .populate('namSuatBan')
+      .populate('category')
+      .then((foundFilms) => {
+        const data1s = foundFilms.map((data1) => {
+          return data1.toObject();
+        })
+        res.render('category/all', {
+          data1: data1s
+        })
       })
       .catch(next);
   }
