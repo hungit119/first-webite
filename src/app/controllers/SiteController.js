@@ -4,15 +4,16 @@ const {
 
 const films = require('../../resources/models/Phim/films');
 class SiteController {
+  // [GET] /films
   index(req, res, next) {
     films.find({
-        category: '61221735b39d0a3098a69f47'
+        category: '61221735b39d0a3098a69f47' //phim mới
       })
       .populate('namSuatBan')
       .populate('theLoai')
       .then(docs1s => {
         films.find({
-            category: '61220f53e917943b903767f9'
+            category: '61220f53e917943b903767f9' //phim đề cử
           })
           .then(docs2s => {
             films.find({

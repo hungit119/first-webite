@@ -1,7 +1,7 @@
 const films = require('../../../resources/models/Phim/films');
 
 class FilmCRController{
-    //[GET] /filmsCR
+    // [GET] /filmsCR
     index(req,res,next){
         films.find({theLoai:'6121f68794fe3633bcb45559'})
             .populate('namSuatBan')

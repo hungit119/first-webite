@@ -4,6 +4,7 @@ const filmsYear = require('../../resources/models/Phim/films.year');
 const filmsCategory = require('../../resources/models/Phim/films.category');
 const films = require('../../resources/models/Phim/films');
 class FilmController {
+  // [GET] /films
   index(req, res, next) {
     films.find({}).populate('theLoai')
       .then(docs1s => {
@@ -27,9 +28,11 @@ class FilmController {
       })
       .catch(next);
   }
+  // [GET] /films/add
   add(req, res) {
     res.render('addFilm');
   }
+  // [GET] /films/data
   async data(req, res, next) {
     const createType = await filmsType.findOne({
       Tenloai: req.body.theLoai
@@ -60,6 +63,7 @@ class FilmController {
     })
     res.redirect('films')
   }
+  // [PUT] /films/update/:id
   async dataEdit(req, res, next) {
     const createType = await filmsType.findOne({
       Tenloai: req.body.theLoai
@@ -92,6 +96,7 @@ class FilmController {
       .then(() => res.redirect('/films'))
       .catch(next);
   }
+  // [GET] /films/detail/:id
   detail(req, res, next) {
     films.findById(req.params.id)
       .populate('theLoai')
@@ -105,6 +110,7 @@ class FilmController {
       })
       .catch(next);
   }
+  // [DELETE] /films/:id
   delete(req, res, next) {
     films.deleteOne({
         _id: req.params.id
@@ -114,6 +120,7 @@ class FilmController {
       })
       .catch(next);
   }
+  // [GET] /films/edit/:id
   edit(req, res, next) {
     films.findById(req.params.id)
       .populate('theLoai')
@@ -128,7 +135,7 @@ class FilmController {
       })
       .catch(next);
   }
-  // [GET] films/all
+  // [GET] /films/all
   all(req, res, next) {
     films.find({})
       .populate('theLoai')
