@@ -5,28 +5,22 @@ const filmsCategory = require('../../resources/models/Phim/films.category');
 const films = require('../../resources/models/Phim/films');
 class FilmController {
   // [GET] /films
-  index(req, res, next) {
-    films.find({}).populate('theLoai')
-      .then(docs1s => {
-        films.find({
-            category: '61220f53e917943b903767f9'
-          }).populate('category')
-          .then(docs2s => {
-            const data1s = docs1s.map(docs1 => {
-              return docs1.toObject();
-            });
-            const data2s = docs2s.map(function (docs2) {
-              return docs2.toObject();
-            });
-            res.render('films', {
-              data1: data1s,
-              data2: data2s
-            });
-            console.log("Render Success !!!");
-          })
-          .catch(next);
-      })
-      .catch(next);
+  async index(req, res, next) {
+     const foundFilms = await films.find({})
+     .populate('theLoai')
+     .populate('category')
+     const totalFilm = await films.find({})
+     .count()
+
+    const newFilms = foundFilms.map(film => {
+      return film.toObject();
+    })
+    const count = totalFilm;
+    console.log(count);
+    res.render('films',{
+      data1:newFilms,
+      countFilms:count
+    })
   }
   // [GET] /films/add
   add(req, res) {

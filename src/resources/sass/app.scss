@@ -77,6 +77,16 @@ header {
     padding-bottom: 0;
 }
 
+//count-films 
+.count-films {
+    color: #000;
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #FEFEFE;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
 .text-item {
     color: #f1b722;
     font-size: 2rem;
@@ -121,17 +131,20 @@ header {
 .body-home {
     margin-top: 60px;
 }
-.btn-sr{
+
+.btn-sr {
     background-color: transparent;
     border: none;
 }
+
 .card-film {
     margin-top: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.select-cus{
+
+.select-cus {
     width: 60%;
     padding: 4px;
     border-radius: 5px;
@@ -236,6 +249,116 @@ header {
     border-radius: 4px;
     color: #fefefe;
     text-align: center;
+}
+
+//LOGIN
+.card {
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+}
+
+.social_icon span:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.card-header h3 {
+    color: white;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember {
+    color: white;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+.login{
+    margin-top: 100px;
+}
+.index-login{
+    width: 600px;
+    margin: 100px auto;
+    background-color: #FEFEFE;
+    padding: 32px 16px;
+    border-radius: 5px;
+}
+.head-login{
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 32px;
+    color: #000;
+    display: block;
+    padding: 16px;
+}
+.body-login{
+    display: flex;
+    justify-content: space-evenly;
+}
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+.link-SignUp{
+    display: inline-block;
+    padding: 12px;
+    background-color: green;
+    color: #FEFEFE;
+    border-radius: 5px;
+}
+.signUp{
+    display: inline-block;
+}
+.link-SignIn{
+    display: inline-block;
+    padding: 12px;
+    background-color: #e46466;
+    color: #FEFEFE;
+    border-radius: 5px;
+}
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
 }
 
 //SIDE BAR

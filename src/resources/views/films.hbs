@@ -5,6 +5,9 @@
                 Danh sách phim trang chủ
             </p>
         </div>
+        <p class="count-films">
+            Tổng phim :{{countFilms}}
+        </p>
         <table class="table table-light border-r">
             <thead>
                 <tr>
@@ -12,46 +15,17 @@
                     <th scope="col">Tên phim</th>
                     <th scope="col">Rating</th>
                     <th scope="col">Thể loại</th>
+                    <th scope="col">Danh mục</th>
                     <th scope="col" colspan="2">Tùy chọn</th>
                 </tr>
             </thead>
             <tbody>
                 {{#each data1}}
                 <tr>
-                    <th scope="row">{{@index}}</th>
+                    <th scope="row">{{sum @index}}</th>
                     <td>{{this.name}}</td>
                     <td>{{this.rate}}</td>
                     <td>{{this.theLoai.Tenloai}}</td>
-                    <td><a href="#" class="btn-xoa" data-toggle="modal" data-target="#delete-films"
-                            data-id="{{this._id}}">Xóa</a></td>
-                    <td><a href="films/edit/{{this._id}}" class="btn-sua">Sửa</a></td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-    </div>
-    <div class="colum-12">
-        <div class="head-list">
-            <p class="text-head-list">
-                Danh sách phim đề cử
-            </p>
-        </div>
-        <table class="table table-light border-r">
-            <thead>
-                <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">Tên phim</th>
-                    <th scope="col">Rating</th>
-                    <th scope="col">Danh mục</th>
-                    <th scope="col" colspan="2">Tùy chọn</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each data2}}
-                <tr>
-                    <th scope="row">{{@index}}</th>
-                    <td>{{this.name}}</td>
-                    <td>{{this.rate}}</td>
                     <td>{{this.category.category}}</td>
                     <td><a href="#" class="btn-xoa" data-toggle="modal" data-target="#delete-films"
                             data-id="{{this._id}}">Xóa</a></td>

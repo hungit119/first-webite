@@ -9,9 +9,15 @@ const mongoose = require('./util/mongoose')
 db.connect();
 
 const app = express()
-const port = 3005
+const port = 3000
 
 app.use(methodOverride('_method'))
+
+const hbs = handlebars.create({});
+
+hbs.handlebars.registerHelper('sum',function(a){
+  return a+1;
+})
 
 app.use(express.urlencoded({
   extended: true
