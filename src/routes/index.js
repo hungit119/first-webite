@@ -6,7 +6,7 @@ function router(app) {
     app.use('/films',filmRoute)
     // [GET /user]
     app.use('/user',userRoute)
-    // [GET /]
+    // [GET /home]
     app.use('/',siteRoute)
 }
 module.exports = router

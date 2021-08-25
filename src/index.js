@@ -6,13 +6,25 @@ const router = require('./routes')
 const db = require('./config/db')
 const methodOverride = require('method-override')
 const mongoose = require('./util/mongoose')
+const session = require('express-session');
+const passport = require('passport')
+const flash = require('connect-flash')
+const cookieParser = require('cookie-parser')
+
 db.connect();
 
 const app = express()
 const port = 3000
-
+app.use(cookieParser())
+app.use(session({
+  secret:'adsa897adsa98bs',
+  resave:false,
+  saveUninitialized:false,
+}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(methodOverride('_method'))
-
 const hbs = handlebars.create({});
 
 hbs.handlebars.registerHelper('sum',function(a){

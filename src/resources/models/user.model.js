@@ -9,12 +9,12 @@ const User = new Schema({
     password:{
         type:String,
         required:true,
+    },
+    role:{
+        type:String,
+        required:true,
     }
+},{
+    collection:'users'
 });
-User.method.envcryptPassword = function (password) {
-    return bcrypt.hashSync(password,bcrypt.genSaltSync(5),null);
-}
-User.method.validPassword = function (password) {
- return bcrypt.compareSync(password,this.password);
-}
 module.exports = mongoose.model('users',User);

@@ -2,9 +2,13 @@ const express = require('express');
 const userController = require('../app/controllers/UserController.js')
 const route = express.Router();
 //[GET] /user/login
-route.use('/login',userController.login)
+route.get('/login',userController.login)
 //[GET] /user/signUp
-route.use('/signUp',userController.signUp)
+route.get('/signUp',userController.signUp)
+//[GET] /user/signUp
+route.post('/login',userController.datalogin)
+//[GET] /user/detail
+route.get('/detail',userController.check,userController.detailUser)
 //[GET] /user
 route.use('/',userController.index)
 
