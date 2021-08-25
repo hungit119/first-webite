@@ -528,13 +528,60 @@ input:focus {
     top: 0;
     right: 0;
     padding: 70px 18px;
-    box-shadow: 2px 2px 5px #000;
+    box-shadow: 1px 1px 17px #000;
     border-radius: 5px;
     height: 100%;
     transition: 0.5s;
     margin-right: -100%;
 }
 
+// Detail Personal
+.right-per{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 67px;
+    box-shadow: 1px 1px 16px #000;
+}
+.img-pers{
+    width: 160px;
+    height: 157px;
+    border-radius: 50%;
+}
+.body-persons{
+    padding: 12px 0;
+
+}
+.text-per{
+    font-size: 1.4rem;
+    text-align: center;
+}
+.infor-pers{
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 30px;
+}
+.text-per-body{
+    font-size: 1.2rem;
+}
+.fav{
+    font-size: 1.4rem;
+    margin: 12px 0;
+}
+.content-person{
+    padding-left: 24px;
+}
+.table-black{
+    background-color: #0c222f;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+    box-shadow: 1px 1px 16px #000;
+}
+.tb-per{
+    color: #FEFEFE;
+}
+//
 .close {
     width: 43px;
     height: 39px;

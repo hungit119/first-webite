@@ -26,10 +26,7 @@ class UserController {
             if(data){
                 const token = jwt.sign({_id:data._id},'mk');
                 res.cookie('token', token)
-                res.json({
-                    message:'Bạn đã đăng nhập thành công',
-                    token:token
-                });
+                res.redirect('/user/detail')
             }
             else{
                 res.json({messageErr:'Tài khoản không tồn tại'})
@@ -40,9 +37,15 @@ class UserController {
     check(req,res,next){
         try {
             var token = req.cookies.token;
-            var ketqua = jwt.verify(token,'mk')   
+            var ketqua = jwt.verify(token,'mk')
             if(ketqua){
-                next();
+                Users.findById(ketqua._id)
+                    .then(data => {
+                        res.locals.data = data;
+                        next()
+                    })
+                    .catch(next)
+                // next();
             } 
         } catch (error) {
             return res.redirect('/user/login')
@@ -50,7 +53,14 @@ class UserController {
 
     }
     detailUser(req,res,next){
-        res.json({message:'Trang detail chỉ cho người đã đăng nhập vào !!!!'})
+        // const user = res.locals;
+        // console.log(typeof user);
+        // res.render('person',{user:user.data}) 
+        const user = res.locals
+        const data = user.data;
+        const newData = data.toObject();
+        console.log('newData :',newData);
+        res.render('person',{newData});
     }
 }
 

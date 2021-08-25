@@ -14,7 +14,7 @@ const cookieParser = require('cookie-parser')
 db.connect();
 
 const app = express()
-const port = 3000
+const port = 3005
 app.use(cookieParser())
 app.use(session({
   secret:'adsa897adsa98bs',
@@ -46,6 +46,22 @@ app.engine('hbs', handlebars({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 router(app)
+
+// const User = require('./resources/models/user.model')
+// async function createUser (){
+//   const creatU = await User.create({
+//     email:'tranduyhungdz119@gmail.com',
+//     password:'1192002',
+//     role:'manager',
+//     personalInformations:{
+//       name:'Trần Duy Hùng',
+//       age:'19',
+//       favorite:'phim hành động',
+//       img:'https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/197514889_208610917791599_3262384838406724480_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=174925&_nc_ohc=1mFlCTo7YoUAX_KIvuN&_nc_ht=scontent-hkt1-1.xx&oh=863292be3185625512438caaa6ad7fc6&oe=614CB18C'
+//     }
+//   })
+// }
+// createUser();
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
 })

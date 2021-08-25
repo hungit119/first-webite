@@ -13,6 +13,12 @@ const User = new Schema({
     role:{
         type:String,
         required:true,
+    },
+    personalInformations:{
+        name:{type:String},
+        age:{type:String},
+        favorite:{type:String},
+        img:{type:String}
     }
 },{
     collection:'users'

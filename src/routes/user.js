@@ -7,9 +7,7 @@ route.get('/login',userController.login)
 route.get('/signUp',userController.signUp)
 //[GET] /user/signUp
 route.post('/login',userController.datalogin)
-//[GET] /user/detail
-route.get('/detail',userController.check,userController.detailUser)
-//[GET] /user
-route.use('/',userController.index)
+//[GET] /user/
+route.get('/',userController.check,userController.detailUser)
 
 module.exports = route;

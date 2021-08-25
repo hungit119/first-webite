@@ -2,6 +2,7 @@ const express = require('express')
 const route = express.Router()
 
 const filmController = require('../app/controllers/FilmController')
+const userController = require('../app/controllers/UserController');
 
 // [GET] /films/search
 route.use('/search',filmController.search)
@@ -20,6 +21,6 @@ route.use('/detail/:id',filmController.detail)
 // [GET] /films/add
 route.use('/add',filmController.add)
 // [GET] /films
-route.use('/',filmController.index)
+route.use('/',userController.check,filmController.index)
 
 module.exports = route
