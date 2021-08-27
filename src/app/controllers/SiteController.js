@@ -7,7 +7,6 @@ class SiteController {
     const phimmoi = await films.find({
         category: '61221735b39d0a3098a69f47'
       }, function () {
-        console.log('founded');
       })
       .populate('theLoai')
       .populate('namSuatBan')
@@ -15,7 +14,6 @@ class SiteController {
     const phimdecu = await films.find({
         category: '61220f53e917943b903767f9'
       }, function () {
-        console.log('founded');
       })
       .populate('theLoai')
       .populate('namSuatBan')
@@ -23,7 +21,6 @@ class SiteController {
     const phimtinhcam = await films.find({
         theLoai: '6121f64d83d7900b801af8e3'
       }, function () {
-        console.log('founded');
       })
       .populate('theLoai')
       .populate('namSuatBan')
@@ -31,7 +28,6 @@ class SiteController {
     const phimhanhdong = await films.find({
         theLoai: '6121f6602e18d81fac40ebea'
       }, function () {
-        console.log('founded');
       })
       .populate('theLoai')
       .populate('namSuatBan')
@@ -39,7 +35,6 @@ class SiteController {
     const phimnuocmat = await films.find({
         theLoai: '6121f6765a14152fe45773a4'
       }, function () {
-        console.log('founded');
       })
       .populate('theLoai')
       .populate('namSuatBan')
@@ -47,7 +42,6 @@ class SiteController {
     const phimhoathinh = await films.find({
         theLoai: '61231349f5b1672f983aede8'
       }, function () {
-        console.log('founded');
       })
       .populate('theLoai')
       .populate('namSuatBan')
@@ -55,7 +49,6 @@ class SiteController {
     const phimchieurap = await films.find({
         theLoai: '6121f68794fe3633bcb45559'
       }, function () {
-        console.log('founded');
       })
       .populate('theLoai')
       .populate('namSuatBan')
