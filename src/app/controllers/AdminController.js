@@ -3,16 +3,27 @@ const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 
 class AdminController {
-    index(req,res,next){
+    async index(req,res,next){
         console.log("req.data =");
-        console.log(req.data);
-        res.render('role/admin')
+        const users = await Users.find({}) 
+        const totaluser = await Users.find({})
+            .count(); 
+
+        const user = users.map(data => {
+            return data.toObject();
+        })
+        res.render('role/admin',{
+            users:user,
+            count:totaluser
+        })
     }
-    index1(req,res,next){
-        res.json({message:'page manager'})
-    }
-    index2(req,res,next){
-        res.json({messdage:'page check uer'})
+    deleteUser(req,res,next) {
+        const userId = req.params.id;
+        Users.deleteOne({_id:userId})
+            .then(data => {
+                res.redirect('back');
+            })
+            .catch(next);
     }
 }
 

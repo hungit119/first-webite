@@ -17,9 +17,9 @@ const app = express()
 const port = 3000
 app.use(cookieParser())
 app.use(session({
-  secret:'adsa897adsa98bs',
-  resave:false,
-  saveUninitialized:false,
+  secret: 'adsa897adsa98bs',
+  resave: false,
+  saveUninitialized: false,
 }));
 app.use(flash());
 app.use(passport.initialize());
@@ -27,8 +27,8 @@ app.use(passport.session());
 app.use(methodOverride('_method'))
 const hbs = handlebars.create({});
 
-hbs.handlebars.registerHelper('sum',function(a){
-  return a+1;
+hbs.handlebars.registerHelper('sum', function (a) {
+  return a + 1;
 })
 
 app.use(express.urlencoded({
@@ -48,17 +48,11 @@ app.set('views', path.join(__dirname, 'resources/views'));
 router(app)
 
 const User = require('./resources/models/user.model')
-async function createUser (){
+async function createUser() {
   const creatU = await User.create({
-    email:'user@gmail.com',
-    password:'1',
-    role:'user',
-    personalInformations:{
-      name:'User name',
-      age:'19',
-      favorite:'phim tình cảm',
-      img:'https://scontent-hkt1-1.xx.fbcdn.net/v/t1.6435-9/197514889_208610917791599_3262384838406724480_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=174925&_nc_ohc=1mFlCTo7YoUAX_KIvuN&_nc_ht=scontent-hkt1-1.xx&oh=863292be3185625512438caaa6ad7fc6&oe=614CB18C'
-    }
+    email: 'user@gmail.com',
+    password: '1',
+    role:'user'
   })
 }
 // createUser();

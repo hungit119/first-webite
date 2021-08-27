@@ -1,1 +1,73 @@
-<h1>Admin</h1>
+<div class="container mt-4">
+    <div class="colum-12">
+        <div class="head-list">
+            <p class="text-head-list">
+                Danh sách người dùng
+            </p>
+        </div>
+        <p class="count-films">
+            Số lượng tài khoản :{{count}}
+        </p>
+        <table class="table table-light border-r">
+            <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Tên tài khoản</th>
+                    <th scope="col">Rule</th>
+                    <th scope="col">email</th>
+                    <th scope="col" colspan="2">Tùy chọn</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <th scope="row">{{sum @index}}</th>
+                    <td>{{this.personalInformations.name}}</td>
+                    <td>{{this.role}}</td>
+                    <td>{{this.email}}</td>
+                    <td><a href="#" class="btn-xoa" data-toggle="modal" data-target="#delete-films"
+                            data-id="{{this._id}}">Xóa</a></td>
+                    <td><a href="films/edit/{{this._id}}" class="btn-sua">Khóa</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="delete-films">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Xóa tài khoản ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn xóa tài khoản này ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="btn-delete-films">Xóa</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form method="POST" id="dele"></form>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var userID;
+        var dlef = document.getElementById('dele')
+        $('#delete-films').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id')
+            userID = id;
+        })
+        var btnDelete = document.getElementById('btn-delete-films');
+        btnDelete.onclick = function () {
+            dlef.action = '/admin/' + userID + '?_method=DELETE'
+            dlef.submit();
+        }
+    })
+
+</script>
