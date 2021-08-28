@@ -9,6 +9,7 @@
                 <div class="body-persons">
                     <p class="text-per color-icon">{{newData.personalInformations.name}}</p>
                 </div>
+                <button class="btn-submit-infor" style="width: 80px; height: 30px;"><a href="/user/formUpload/{{newData._id}}" style="color: black;">Đổi ảnh</a></button>
             </div>
             <div class="colum-8">
                 <div class="content-person">
@@ -16,7 +17,10 @@
                         Thông tin người dùng
                     </div><br>
                     <div class="infor">
-                        <p class="text-per-body color-icon"><span style="color: #fefefe;">Email : </span>{{newData.email}}</p>
+                        <p class="text-per-body color-icon"><span style="color: #fefefe;">Username : </span>{{newData.username}}</p>
+                    </div>
+                    <div class="infor">
+                        <p class="text-per-body color-icon"><span style="color: #fefefe;">Email : </span>{{newData.personalInformations.email}}</p>
                     </div>
                     <div class="infor">
                         <p class="text-per-body color-icon"><span style="color: #fefefe;">Chức vụ : </span>{{newData.role}}</p>
@@ -44,6 +48,8 @@
                             </tr>
                         </tbody>
                     </table>
+                    <button class="btn-submit-infor"><a style="font-size: 1.2rem;color: black;" href="/user/addInfor/{{newData._id}}">Chỉnh sửa</a></button>
+                    <button class="btn-submit-infor"><a style="font-size: 1.2rem;color: black;" href="/user/logout">Đăng xuất</a></button>
                 </div>
             </div>
         </div>

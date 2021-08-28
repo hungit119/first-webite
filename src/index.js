@@ -14,7 +14,7 @@ const cookieParser = require('cookie-parser')
 db.connect();
 
 const app = express()
-const port = 3000
+const port = 3005
 app.use(cookieParser())
 app.use(session({
   secret: 'adsa897adsa98bs',

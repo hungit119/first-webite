@@ -360,7 +360,33 @@ input:focus {
 .links a {
     margin-left: 4px;
 }
-
+//information
+.form-infor{
+    margin: 64px auto;
+    width: 600px;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 16px #000;
+}
+.font-size-inf{
+    font-size: 1.4rem;
+}
+.icon-infor{
+    color: #FFC312;
+    font-size: 10.6rem;
+    margin-top: 70px;
+    box-shadow: 1px 1px 59px #000;
+    border-radius: 50%;
+}
+.btn-submit-infor{
+    width: 120px; 
+    height: 40px;
+    background-color: #FFC312;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 16px #000;
+}
 //SIDE BAR
 .img-sidbars {
     width: 70px;
@@ -533,6 +559,7 @@ input:focus {
     height: 100%;
     transition: 0.5s;
     margin-right: -100%;
+    z-index: 1;
 }
 
 // Detail Personal

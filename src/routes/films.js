@@ -4,53 +4,26 @@ const route = express.Router()
 const filmController = require('../app/controllers/FilmController')
 const userController = require('../app/controllers/UserController');
 
-var checkLog = async (req,res,next) => {
-    try {
-        const token = await req.cookies.token;
-        var userId = await jwt.verify(token,'mk')
-        await Users.findOne({
-            _id:userId
-        })
-        .then(data => {
-            if(data){
-                req.data = data;
-                next()
-            }
-            else{
-                res.redirect('/user/login')
-            }
-        })
-        .catch(next);
-    } catch (error) {
-        res.redirect('/user/login')
-    }
-}
-var checkadmin = async (req,res,next) => {
-    const role = await req.data.role;
-    if( role === 'admin'){
-        next()
-    }
-    else{
-        res.json({message:'Not permission'})
-    }
-}
+const {checkAdmin} = require('../app/controllers/authentication/permission')
+const {checkLog} = require('../app/controllers/authentication/authenticate')
+
 // [GET] /films/search
-route.use('/search',filmController.search)
+route.use('/search',checkLog,checkAdmin,filmController.search)
 // [DELETE] /films/:id
-route.delete('/:id',filmController.delete)
+route.delete('/:id',checkLog,checkAdmin,filmController.delete)
 // [GET] /films/edit/:id
-route.use('/edit/:id',filmController.edit)
+route.use('/edit/:id',checkLog,checkAdmin,filmController.edit)
 // [PUT] /films/update/:id
-route.put('/update/:id',filmController.dataEdit)
+route.put('/update/:id',checkLog,checkAdmin,filmController.dataEdit)
 // [GET] /films/data
-route.use('/data',filmController.data)
+route.use('/data',checkLog,checkAdmin,filmController.data)
 // [GET] /films/all
-route.use('/all',filmController.all)
+route.use('/all',checkLog,checkAdmin,filmController.all)
 // [GET] /films/detail/:id
-route.use('/detail/:id',filmController.detail)
+route.use('/detail/:id',checkLog,checkAdmin,filmController.detail)
 // [GET] /films/add
-route.use('/add',filmController.add)
+route.use('/add',checkLog,checkAdmin,filmController.add)
 // [GET] /films
-route.use('/',filmController.index)
+route.use('/',checkLog,checkAdmin,filmController.index)
 
 module.exports = route

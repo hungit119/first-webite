@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="colum-12">
+        </div>
+        <div class="colum-12">
+            <i class="fas fa-user-circle icon-infor"></i>
+        </div>
+        <div class="form-infor">
+            <form method="POST" action="/user/addInfor/{{newuser._id}}?_method=PUT">
+                <div class="form-group row">
+                    <label for="inputPassword" class="colum-4 col-form-label color-icon font-size-inf">Username</label>
+                    <div class="colum-8">
+                        <input type="text" class="form-control" id="inputPassword" value="{{newuser.username}}"
+                            name="username" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="colum-4 col-form-label color-icon font-size-inf">Họ tên:</label>
+                    <div class="colum-8">
+                        <input type="text" class="form-control" id="inputPassword" placeholder="Họ tên" name="name"
+                            value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="colum-4 col-form-label color-icon font-size-inf">Tuổi:</label>
+                    <div class="colum-8">
+                        <input type="text" class="form-control" id="inputPassword" placeholder="Tuổi" name="age"
+                            value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="colum-4 col-form-label color-icon font-size-inf">Email</label>
+                    <div class="colum-8">
+                        <input type="email" class="form-control" id="inputPassword" placeholder="Nhập email"
+                            name="email" value="">
+                    </div>
+                </div>
+                <fieldset style="margin-top: 64px;">
+                    <legend class="color-icon" style="margin-bottom: 32px; text-align: center;">Thông tin liên quan
+                    </legend>
+                    <div class="form-group row">
+                        <label for="inputPassword"
+                            class="colum-4 col-form-label color-icon font-size-inf">Favorite:</label>
+                        <div class="colum-8">
+                            <input type="text" class="form-control" id="inputPassword" placeholder="Thể loại yêu thích"
+                                name="favorite">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label color-icon font-size-inf">Giới
+                            tính:</label>
+                        <div class="colum-8">
+                            <select style="padding: 4px 6px;" name="gender">
+                                <option>
+                                    --- Chọn giới tính ---
+                                </option>
+                                <option value="Nam">
+                                    Nam
+                                </option>
+                                <option value="Nữ">
+                                    Nữ
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row" style="display: none;">
+                        <label for="inputPassword"
+                            class="colum-4 col-form-label color-icon font-size-inf">Avarta:</label>
+                        <div class="colum-8">
+                            <input style="padding: 4px; color: burlywood;font-style: italic;" type="file" name="img">
+                        </div>
+                    </div>
+                </fieldset>
+                <input class="btn-submit-infor" type="submit" value="Thêm">
+            </form>
+        </div>
+    </div>
+</div>

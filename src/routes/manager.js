@@ -1,12 +1,13 @@
 const express = require('express');
 const route = express.Router();
 const adminController = require('../app/controllers/AdminController')
-const jwt = require('jsonwebtoken')
-const Users = require('../resources/models/user.model')
+const {checkAdmin} = require('../app/controllers/authentication/permission')
+const {checkLog} = require('../app/controllers/authentication/authenticate')
+
 
 //[GET] admin/
 route.delete('/:id',adminController.deleteUser)
 //[GET] admin/
-route.get('/',adminController.index)
+route.get('/',checkLog,checkAdmin,adminController.index)
 
 module.exports = route;
