@@ -6,6 +6,8 @@ const filmTCController = require('../app/controllers/CategoryController/FilmTCCo
 const filmHDController = require('../app/controllers/CategoryController/FilmHDController');
 const filmNMController = require('../app/controllers/CategoryController/FilmNMController');
 const filmCRController = require('../app/controllers/CategoryController/FilmCRController');
+const filmTXController = require('../app/controllers/CategoryController/FilmTXController');
+
 
 // [GET] /filmsTC
 route.use('/filmsTC',filmTCController.index)
@@ -15,6 +17,8 @@ route.use('/filmsHD',filmHDController.index)
 route.use('/filmsNM',filmNMController.index)
 // [GET] /filmsCR
 route.use('/filmsCR',filmCRController.index)
+// [GET] /filmsTX
+route.use('/filmsTX',filmTXController.index)
 // [GET] /films
 route.use('/',siteController.index)
 
