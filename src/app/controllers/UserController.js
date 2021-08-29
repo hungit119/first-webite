@@ -26,7 +26,7 @@ class UserController {
             const newuser = await Users.create({
                 username: data.username,
                 password: data.password,
-                role: 1
+                role: 0
             })
             res.render('addInfor', { newuser: newuser.toObject() })
         }

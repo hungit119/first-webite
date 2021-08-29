@@ -12,3 +12,16 @@ exports.checkAdmin = async (req,res,next) => {
         }
     }
 }
+exports.checkmanager = async (req,res,next) => {
+    const data = res.data;
+    const user = await Users.findOne({_id:data._id})
+    if(user){
+        const role = user.role;
+        if(role >= 1){
+            next();
+        }
+        else{
+            res.render('error')
+        }
+    }
+}
