@@ -16,7 +16,6 @@ class FilmController {
       return film.toObject();
     })
     const count = totalFilm;
-    console.log(count);
     res.render('films', {
       data1: newFilms,
       countFilms: count
@@ -59,7 +58,6 @@ class FilmController {
   }
   // [PUT] /films/update/:id
   async dataEdit(req, res, next) {
-    console.log(req.body)
     const createType = await filmsType.findOne({
       Tenloai: req.body.theLoai
     })

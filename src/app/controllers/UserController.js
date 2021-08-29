@@ -28,7 +28,6 @@ class UserController {
                 password: data.password,
                 role: 1
             })
-            console.log(newuser);
             res.render('addInfor', { newuser: newuser.toObject() })
         }
     }
@@ -39,8 +38,6 @@ class UserController {
     datalogin(req, res, next) {
         const username = req.body.username;
         const password = req.body.password;
-        console.log(username)
-        console.log(password)
         Users.findOne({
             username: username,
             password: password,
@@ -59,15 +56,11 @@ class UserController {
     }
     detailUser(req, res, next) {
         const data = res.data
-        console.log(data._id);
-        console.log(data)
         res.render('person', { newData: data.toObject() })
     }
     async addInforData(req, res, next) {
         const id = req.params.id;
         const data = req.body;
-        console.log(id)
-        console.log(data)
         await Users.updateOne({
             _id: id
         }, {
@@ -91,7 +84,6 @@ class UserController {
         const id = req.params.id;
         Users.findOne({ _id: id })
             .then(data => {
-                console.log(data)
                 res.render('editInfor', { newuser: data.toObject() })
             })
             .catch(next)
@@ -118,17 +110,14 @@ class UserController {
     async upload(req, res, next) {
         const id = req.params.id;
         const img = req.file;
-        console.log(img);
         const pathImg = path.join(__dirname, '../../public/uploads')
         const fileUpload = await new resize(pathImg)
         if (!img) {
             res.status(404).json({ error: 'Please provide an image' })
         }
         else {
-            console.log(fileUpload)
             const filename = await fileUpload.save(img.buffer);
             const userCurrent = await Users.findOne({ _id: id })
-            console.log(userCurrent)
             const newUser = await Users.updateOne({ _id: id }, {
                 personalInformations: {
                     name: userCurrent.personalInformations.name,
@@ -143,7 +132,6 @@ class UserController {
                 .then(data => {
                     const user = data;
                     const newuser = user.toObject(); 
-                    console.log(newuser)
                     res.render('person', {
                         newData:newuser
                     })

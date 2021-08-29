@@ -4,7 +4,6 @@ const cookieParser = require('cookie-parser')
 
 class AdminController {
     async index(req,res,next){
-        console.log("req.data =");
         const users = await Users.find({}) 
         const totaluser = await Users.find({})
             .count(); 
