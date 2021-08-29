@@ -425,6 +425,46 @@
                         {{/each}}
                     </div>
                 </div>
+                <div class="colum-12">
+                    <div class="head-side">
+                        <p style="margin: 0;">Thanh Xuân Vườn Trường</p>
+                    </div>
+                    <div class="side-right">
+                        {{#each data8}}
+                        <div class="col-12 cardSide">
+                            <a href="/films/detail/{{this._id}}">
+                                <div class="media">
+                                    <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <dir class="text-body">
+                                            {{this.name}}
+                                        </dir>
+                                        <div class="star-side">
+                                            <ul class="list-star-side">
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-star active-star"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
