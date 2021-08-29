@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
+const uri = 'mongodb+srv://hungtran:1192002@cluster0.ilmtf.mongodb.net/MYDATA?retryWrites=true&w=majority'
 function connect() {
 try {
-    mongoose.connect('mongodb://localhost:27017/MYDATA', {
+    mongoose.connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex:true
