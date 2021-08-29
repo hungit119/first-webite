@@ -6,20 +6,20 @@ const films = require('../../resources/models/Phim/films');
 class FilmController {
   // [GET] /films
   async index(req, res, next) {
-     const foundFilms = await films.find({})
-     .populate('theLoai')
-     .populate('category')
-     const totalFilm = await films.find({})
-     .count()
+    const foundFilms = await films.find({})
+      .populate('theLoai')
+      .populate('category')
+    const totalFilm = await films.find({})
+      .count()
 
     const newFilms = foundFilms.map(film => {
       return film.toObject();
     })
     const count = totalFilm;
     console.log(count);
-    res.render('films',{
-      data1:newFilms,
-      countFilms:count
+    res.render('films', {
+      data1: newFilms,
+      countFilms: count
     })
   }
   // [GET] /films/add
@@ -59,6 +59,7 @@ class FilmController {
   }
   // [PUT] /films/update/:id
   async dataEdit(req, res, next) {
+    console.log(req.body)
     const createType = await filmsType.findOne({
       Tenloai: req.body.theLoai
     })
@@ -71,44 +72,54 @@ class FilmController {
     const createCategory = await filmsCategory.findOne({
       category: req.body.category
     })
+    
     films.updateOne({
-        _id: req.params.id
-      }, {
-        theLoai: createType._id,
-        quocGia: createRegion._id,
-        namSuatBan: createYear._id,
-        category: createCategory._id,
-        name: req.body.name,
-        img: req.body.img,
-        rate: req.body.rate,
-        thoiLuong: req.body.thoiLuong,
-        trailer: req.body.trailer,
-        full: req.body.full,
-        moTa: req.body.moTa,
-        daoDien: req.body.daoDien
-      })
+      _id: req.params.id
+    }, {
+      theLoai: createType._id,
+      quocGia: createRegion._id,
+      namSuatBan: createYear._id,
+      category: createCategory._id,
+      name: req.body.name,
+      img: req.body.img,
+      rate: req.body.rate,
+      thoiLuong: req.body.thoiLuong,
+      trailer: req.body.trailer,
+      full: req.body.full,
+      moTa: req.body.moTa,
+      daoDien: req.body.daoDien
+    })
       .then(() => res.redirect('/films'))
       .catch(next);
   }
   // [GET] /films/detail/:id
-  detail(req, res, next) {
-    films.findById(req.params.id)
+  async detail(req, res, next) {
+    const detail = await films.findById(req.params.id)
       .populate('theLoai')
       .populate('quocGia')
       .populate('region')
-      .then((Films) => {
-        const films = Films.toObject();
-        res.render('detail', {
-          films
-        });
+    const phimdecu = await films.find({
+      category: '61220f53e917943b903767f9'
+    }, function () {
+    })
+      .populate('theLoai')
+      .populate('namSuatBan')
+    
+      const filmsdetail = detail.toObject();
+      const filmshot = phimdecu.map(data=>{
+        return data.toObject();
       })
-      .catch(next);
+
+      res.render('detail',{
+        films:filmsdetail,
+        filmsDC:filmshot,
+      })
   }
   // [DELETE] /films/:id
   delete(req, res, next) {
     films.deleteOne({
-        _id: req.params.id
-      })
+      _id: req.params.id
+    })
       .then(() => {
         res.redirect('back');
       })
@@ -147,18 +158,40 @@ class FilmController {
       .catch(next);
   }
   //[GET] films/search
-  search(req,res,next){
+  search(req, res, next) {
     const find = req.query.name
-    films.find({name:find})
+    films.find({ name: find })
       .populate('theLoai')
       .populate('namSuatBan')
-      .then(filmFounds=>{
-        const filmsFound = filmFounds.map(film =>{
+      .then(filmFounds => {
+        const filmsFound = filmFounds.map(film => {
           return film.toObject();
         })
-        res.render('search',{filmsFound})
+        res.render('search', { filmsFound })
       })
       .catch(next)
+  }
+  async full(req,res,next){
+    const detail = await films.findById(req.params.id)
+      .populate('theLoai')
+      .populate('quocGia')
+      .populate('region')
+    const phimdecu = await films.find({
+      category: '61220f53e917943b903767f9'
+    }, function () {
+    })
+      .populate('theLoai')
+      .populate('namSuatBan')
+    
+      const filmsdetail = detail.toObject();
+      const filmshot = phimdecu.map(data=>{
+        return data.toObject();
+      })
+
+      res.render('full',{
+        films:filmsdetail,
+        filmsDC:filmshot,
+      })
   }
 }
 

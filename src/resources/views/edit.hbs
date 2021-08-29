@@ -6,7 +6,7 @@
                 <div class="form-group">
                     <label class="label" for="theLoai">Thể Loại:</label>
                     <select name="theLoai" data-placeholder="Chọn Thể Loại:" class="select-cus">
-                        <option>--- Chọn thể loại phim ---</option>
+                        <option value="{{Film.theLoai.Tenloai}}">--- Chọn thể loại ---</option>
                         <option value="phim tình cảm">phim tình cảm</option>
                         <option value="phim hành động">phim hành động</option>
                         <option value="phim chiếu rạp">phim chiếu rạp</option>
@@ -17,7 +17,7 @@
                 <div class="form-group">
                     <label class="label" for="quocGia">Quốc gia:</label>
                     <select name="quocGia" data-placeholder="Chọn quốc gia:" class="select-cus">
-                        <option>--- Chọn quốc gia phim ---</option>
+                        <option value="{{Film.quocGia.region}}">--- Chọn quốc gia phim ---</option>
                         <option value="Mỹ">Mỹ</option>
                         <option value="Trung Quốc">Trung Quốc</option>
                         <option value="Nhật Bản">Nhật Bản</option>

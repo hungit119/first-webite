@@ -150,14 +150,6 @@ class UserController {
                 })
                 .catch(next)
         }
-        //     const imgPath = path.join(__dirname,'/public/img') 
-        //     const fileUpload = new resize(imgPath);
-        //     if(!req.file){
-        //         res.status(404).json({error:'Please provide an image'})
-        //     }
-        //     const filename = await fileUpload.save(req.file.buffer);
-        //     return res.status(200).json({name:filename});
-        // }
     }
     formUpload(req, res, next) {
         const id = req.params.id;

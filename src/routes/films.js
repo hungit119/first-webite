@@ -8,19 +8,21 @@ const {checkAdmin} = require('../app/controllers/authentication/permission')
 const {checkLog} = require('../app/controllers/authentication/authenticate')
 
 // [GET] /films/search
-route.use('/search',checkLog,checkAdmin,filmController.search)
+route.use('/search',filmController.search)
 // [DELETE] /films/:id
 route.delete('/:id',checkLog,checkAdmin,filmController.delete)
 // [GET] /films/edit/:id
 route.use('/edit/:id',checkLog,checkAdmin,filmController.edit)
 // [PUT] /films/update/:id
-route.put('/update/:id',checkLog,checkAdmin,filmController.dataEdit)
+route.put('/update/:id',filmController.dataEdit)
 // [GET] /films/data
 route.use('/data',checkLog,checkAdmin,filmController.data)
 // [GET] /films/all
-route.use('/all',checkLog,checkAdmin,filmController.all)
+route.use('/all',filmController.all)
+// [GET] /films/full/:id
+route.use('/full/:id',filmController.full)
 // [GET] /films/detail/:id
-route.use('/detail/:id',checkLog,checkAdmin,filmController.detail)
+route.use('/detail/:id',filmController.detail)
 // [GET] /films/add
 route.use('/add',checkLog,checkAdmin,filmController.add)
 // [GET] /films

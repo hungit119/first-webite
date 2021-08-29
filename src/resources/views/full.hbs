@@ -32,14 +32,6 @@
                     {{films.theLoai.Tenloai}}
                 </a>
             </div>
-            <div class="btn-play">
-                <a href="#trailer">
-                    <button class="btn-trailer">Trailer</button>
-                </a>
-                <a href="{{films.full}}">
-                    <button class="btn-xem">Xem phim</button>
-                </a>
-            </div>
             <div class="content-detail-body">
                 <ul class="list-content">
                     <li class="item-content">
@@ -79,7 +71,7 @@
     <div class="row">
         <div class="colum-12">
             <div id="trailer" class="trailer-video">
-                <iframe class="ifram-trailer" src="https://www.youtube.com/embed/{{films.trailer}}"
+                <iframe class="ifram-trailer" src="https://www.youtube.com/embed/{{films.full}}"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
