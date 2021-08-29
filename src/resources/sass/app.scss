@@ -387,6 +387,11 @@ input:focus {
     border-radius: 10px;
     box-shadow: 1px 1px 16px #000;
 }
+.content-films{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 //SIDE BAR
 .img-sidbars {
     width: 70px;
