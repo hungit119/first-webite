@@ -4,16 +4,20 @@
             <img src="../../../img/logophim.png" alt="logo" class="logo-img" />
         </a>
         <a href="/" style="text-decoration: none; color: #FEFEFE;">
-            <p class="logo-text">YEUPHIM</p>
+            <p class="logo-text">Flixtor</p>
         </a>
     </span>
     <div class="navs">
         <ul class="list-navs">
             <li class="item-nav"><a href="/" class="link-navs">Phim Mới</a></li>
-            <li class="item-nav"><a href="/filmsTC" class="link-navs">Phim Tình Cảm</a></li>
-            <li class="item-nav"><a href="/filmsHD" class="link-navs">Phim Hành Động</a></li>
-            <li class="item-nav"><a href="/filmsNM" class="link-navs">Phim Cảm Động</a></li>
-            <li class="item-nav"><a href="/filmsCR" class="link-navs">Phim Chiếu Rạp</a></li>
+            <li class="item-nav"><a href="/filmsTC" class="link-navs">Phim Tình
+                    Cảm</a></li>
+            <li class="item-nav"><a href="/filmsHD" class="link-navs">Phim Hành
+                    Động</a></li>
+            <li class="item-nav"><a href="/filmsNM" class="link-navs">Phim Cảm
+                    Động</a></li>
+            <li class="item-nav"><a href="/filmsCR" class="link-navs">Phim Chiếu
+                    Rạp</a></li>
             <li class="item-nav option-dr" id="option-dd" onclick="option()">
                 <a href="#" class="link-navs">Tùy Chọn</a>
                 <div class="drop-down-op" id="item-op-dd">
@@ -40,26 +44,35 @@
                 </div>
             </li>
         </ul>
-    <div class="line"></div>
+        <div class="line"></div>
     </div>
     <span class="nav-menu">
-        <a href="javascript:void(0)" class="btnOpen" onclick="opennav()" style="color: #FEFEFE;">
+        <a
+            href="javascript:void(0)"
+            class="btnOpen"
+            onclick="opennav()"
+            style="color: #FEFEFE;"
+        >
             <i class="fas fa-bars"></i>
         </a>
         <div class="content-menu-sidebar" id="MySlide">
             <ul class="list-item-menu">
                 <li class="item-menu">
                     <a href="/">
-                        Phim mới 
+                        Phim mới
                     </a>
-                    <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">
+                    <a
+                        href="javascript:void(0)"
+                        class="closeBtn"
+                        onclick="closeNav()"
+                    >
                         <i class="fas fa-times icon-close"></i>
                     </a>
                 </li>
                 <div class="dropdown-divider"></div>
                 <li class="item-menu">
                     <a href="/filmsTC">
-                        Phim tình cảm 
+                        Phim tình cảm
                     </a>
                 </li>
                 <li class="item-menu">
@@ -69,17 +82,17 @@
                 </li>
                 <li class="item-menu">
                     <a href="/filmsNM">
-                        Phim cảm động 
+                        Phim cảm động
                     </a>
                 </li>
                 <li class="item-menu">
                     <a href="filmsCR">
-                        Phim chiếu rạp  
+                        Phim chiếu rạp
                     </a>
                 </li>
                 <li class="item-menu">
                     <a href="filmsTX">
-                        Thanh xuân vườn trường  
+                        Thanh xuân vườn trường
                     </a>
                 </li>
                 <li class="item-menu">
@@ -98,13 +111,9 @@
     </span>
     <script>
         function opennav() {
-            document.getElementById('MySlide').style.marginRight = "0%";
-        }
-        function closeNav() {
-            document.getElementById('MySlide').style.marginRight = "-100%";
-        }
-        function option(){
-            document.getElementById('item-op-dd').classList.toggle('show')
-        }
+        document.getElementById('MySlide').style.marginRight = "0%"; } function
+        closeNav() { document.getElementById('MySlide').style.marginRight =
+        "-100%"; } function option(){
+        document.getElementById('item-op-dd').classList.toggle('show') }
     </script>
 </header>

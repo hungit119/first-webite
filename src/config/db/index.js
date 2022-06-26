@@ -1,15 +1,13 @@
-const mongoose = require('mongoose')
-const uri = 'mongodb+srv://hungtran:1192002@cluster0.ilmtf.mongodb.net/MYDATA?retryWrites=true&w=majority'
-function connect() {
-try {
-    mongoose.connect(uri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex:true
+const mongoose = require('mongoose');
+async function connect() {
+  try {
+    await mongoose.connect('mongodb://localhost/phim_data_dev', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
-    console.log("Connect true");
-} catch (error) {
-    console.log("Connect fail !!!");
-}    
+    console.log('Connect thanh cong !');
+  } catch (error) {
+    console.log('Connect that bai !');
+  }
 }
-module.exports = { connect }
+module.exports = {connect};

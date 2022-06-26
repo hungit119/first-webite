@@ -2,7 +2,12 @@
     <div class="colum-12">
         <form class="form" action="/films/search">
             <div class="form-group colum-12">
-                <input type="text" name="name" class="input-search" placeholder="Bạn muốn xem gì ?" />
+                <input
+                    type="text"
+                    name="name"
+                    class="input-search"
+                    placeholder="Bạn muốn xem gì ?"
+                />
                 <button type="submit" class="btn-search">Tìm kiếm</button>
             </div>
         </form>
@@ -23,70 +28,98 @@
                 <div class="colum-6" style="padding-bottom: 0;">
                     <div class="row danh-muc-wrap danhmuc">
                         <div class="danh-muc-section">
-                            <a href="" class="danh-muc active" style="text-decoration: none;">
+                            <a
+                                href=""
+                                class="danh-muc active"
+                                style="text-decoration: none;"
+                            >
                                 Phim mới
                             </a>
                         </div>
                         <div class="danh-muc-section">
-                            <a href="/films/all" class="danh-muc" style="text-decoration: none;">
+                            <a
+                                href="/films/all"
+                                class="danh-muc"
+                                style="text-decoration: none;"
+                            >
                                 Tất cả phim
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row colum-12">
                     {{#each data1}}
-                    <div class="colum-s-6 colum-3 card-film">
-                        <div class="content-film">
-                            <div class="img-content-film">
-                                <a href="/films/detail/{{this._id}}">
-                                    <img src="{{this.img}}" alt="" class="img-film" />
+                        <div class="colum-s-6 colum-3 card-film">
+                            <div class="content-film">
+                                <div class="img-content-film">
+                                    <a href="/films/detail/{{this._id}}">
+                                        <img
+                                            src="{{this.img}}"
+                                            alt=""
+                                            class="img-film"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="body">
+                                    <div class="name-film-content">
+                                        <p class="name-film color-text">
+                                            <a
+                                                href="/films/detail/{{this._id}}"
+                                                style="color: #FEFEFE;"
+                                                class="name-text-film"
+                                            >
+                                                {{this.name}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="year color-text">
+                                        ({{this.namSuatBan.year}})
+                                    </div>
+                                    <div class="star">
+                                        <ul class="list-star">
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span class="rate-film color-text">
+                                        Rate :
+                                        {{this.rate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="tag-film color-text">
+                                <a href="" style="color: #FEFEFE;">
+                                    <i
+                                        class="fas fa-tags"
+                                        style="color: #C59A22;"
+                                    ></i>
+                                    {{this.theLoai.Tenloai}}
                                 </a>
                             </div>
-                            <div class="body">
-                                <div class="name-film-content">
-                                    <p class="name-film color-text">
-                                        <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;"
-                                            class="name-text-film">
-                                            {{this.name}}
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="year color-text">
-                                    ({{this.namSuatBan.year}})
-                                </div>
-                                <div class="star">
-                                    <ul class="list-star">
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <span class="rate-film color-text">
-                                    Rate :
-                                    {{this.rate}}
-                                </span>
-                            </div>
                         </div>
-                        <div class="tag-film color-text">
-                            <a href="" style="color: #FEFEFE;">
-                                <i class="fas fa-tags" style="color: #C59A22;"></i>
-                                {{this.theLoai.Tenloai}}
-                            </a>
-                        </div>
-                    </div>
                     {{/each}}
                 </div>
             </div>
@@ -97,59 +130,79 @@
                         Phim Tình Cảm
                     </p>
                 </div>
-                <div class="row">
+                <div class="row colum-12">
                     {{#each data3}}
-                    <div class="colum-s-6 colum-3 card-film">
-                        <div class="content-film">
-                            <div class="img-content-film">
-                                <a href="/films/detail/{{this._id}}">
-                                    <img src="{{this.img}}" alt="" class="img-film" />
+                        <div class="colum-s-6 colum-3 card-film">
+                            <div class="content-film">
+                                <div class="img-content-film">
+                                    <a href="/films/detail/{{this._id}}">
+                                        <img
+                                            src="{{this.img}}"
+                                            alt=""
+                                            class="img-film"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="body">
+                                    <div class="name-film-content">
+                                        <p class="name-film color-text">
+                                            <a
+                                                href="/films/detail/{{this._id}}"
+                                                style="color: #FEFEFE;"
+                                                class="name-text-film"
+                                            >
+                                                {{this.name}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="year color-text">
+                                        ({{this.namSuatBan.year}})
+                                    </div>
+                                    <div class="star">
+                                        <ul class="list-star">
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span class="rate-film color-text">
+                                        Rate :
+                                        {{this.rate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="tag-film color-text">
+                                <a href="" style="color: #FEFEFE;">
+                                    <i
+                                        class="fas fa-tags"
+                                        style="color: #C59A22;"
+                                    ></i>
+                                    {{this.theLoai.Tenloai}}
                                 </a>
                             </div>
-                            <div class="body">
-                                <div class="name-film-content">
-                                    <p class="name-film color-text">
-                                        <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;"
-                                            class="name-text-film">
-                                            {{this.name}}
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="year color-text">
-                                    ({{this.namSuatBan.year}})
-                                </div>
-                                <div class="star">
-                                    <ul class="list-star">
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <span class="rate-film color-text">
-                                    Rate :
-                                    {{this.rate}}
-                                </span>
-                            </div>
                         </div>
-                        <div class="tag-film color-text">
-                            <a href="" style="color: #FEFEFE;">
-                                <i class="fas fa-tags" style="color: #C59A22;"></i>
-                                {{this.theLoai.Tenloai}}
-                            </a>
-                        </div>
-                    </div>
                     {{/each}}
                 </div>
             </div>
@@ -160,59 +213,79 @@
                         Phim Hành Động
                     </p>
                 </div>
-                <div class="row">
+                <div class="row colum-12">
                     {{#each data4}}
-                    <div class="colum-s-6 colum-3 card-film">
-                        <div class="content-film">
-                            <div class="img-content-film">
-                                <a href="/films/detail/{{this._id}}">
-                                    <img src="{{this.img}}" alt="" class="img-film" />
+                        <div class="colum-s-6 colum-3 card-film">
+                            <div class="content-film">
+                                <div class="img-content-film">
+                                    <a href="/films/detail/{{this._id}}">
+                                        <img
+                                            src="{{this.img}}"
+                                            alt=""
+                                            class="img-film"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="body">
+                                    <div class="name-film-content">
+                                        <p class="name-film color-text">
+                                            <a
+                                                href="/films/detail/{{this._id}}"
+                                                style="color: #FEFEFE;"
+                                                class="name-text-film"
+                                            >
+                                                {{this.name}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="year color-text">
+                                        ({{this.namSuatBan.year}})
+                                    </div>
+                                    <div class="star">
+                                        <ul class="list-star">
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span class="rate-film color-text">
+                                        Rate :
+                                        {{this.rate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="tag-film color-text">
+                                <a href="" style="color: #FEFEFE;">
+                                    <i
+                                        class="fas fa-tags"
+                                        style="color: #C59A22;"
+                                    ></i>
+                                    {{this.theLoai.Tenloai}}
                                 </a>
                             </div>
-                            <div class="body">
-                                <div class="name-film-content">
-                                    <p class="name-film color-text">
-                                        <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;"
-                                            class="name-text-film">
-                                            {{this.name}}
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="year color-text">
-                                    ({{this.namSuatBan.year}})
-                                </div>
-                                <div class="star">
-                                    <ul class="list-star">
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <span class="rate-film color-text">
-                                    Rate :
-                                    {{this.rate}}
-                                </span>
-                            </div>
                         </div>
-                        <div class="tag-film color-text">
-                            <a href="" style="color: #FEFEFE;">
-                                <i class="fas fa-tags" style="color: #C59A22;"></i>
-                                {{this.theLoai.Tenloai}}
-                            </a>
-                        </div>
-                    </div>
                     {{/each}}
                 </div>
             </div>
@@ -223,59 +296,79 @@
                         Phim Nước Mắt
                     </p>
                 </div>
-                <div class="row">
+                <div class="row colum-12">
                     {{#each data5}}
-                    <div class="colum-s-6 colum-3 card-film">
-                        <div class="content-film">
-                            <div class="img-content-film">
-                                <a href="/films/detail/{{this._id}}">
-                                    <img src="{{this.img}}" alt="" class="img-film" />
+                        <div class="colum-s-6 colum-3 card-film">
+                            <div class="content-film">
+                                <div class="img-content-film">
+                                    <a href="/films/detail/{{this._id}}">
+                                        <img
+                                            src="{{this.img}}"
+                                            alt=""
+                                            class="img-film"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="body">
+                                    <div class="name-film-content">
+                                        <p class="name-film color-text">
+                                            <a
+                                                href="/films/detail/{{this._id}}"
+                                                style="color: #FEFEFE;"
+                                                class="name-text-film"
+                                            >
+                                                {{this.name}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="year color-text">
+                                        ({{this.namSuatBan.year}})
+                                    </div>
+                                    <div class="star">
+                                        <ul class="list-star">
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span class="rate-film color-text">
+                                        Rate :
+                                        {{this.rate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="tag-film color-text">
+                                <a href="" style="color: #FEFEFE;">
+                                    <i
+                                        class="fas fa-tags"
+                                        style="color: #C59A22;"
+                                    ></i>
+                                    {{this.theLoai.Tenloai}}
                                 </a>
                             </div>
-                            <div class="body">
-                                <div class="name-film-content">
-                                    <p class="name-film color-text">
-                                        <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;"
-                                            class="name-text-film">
-                                            {{this.name}}
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="year color-text">
-                                    ({{this.namSuatBan.year}})
-                                </div>
-                                <div class="star">
-                                    <ul class="list-star">
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <span class="rate-film color-text">
-                                    Rate :
-                                    {{this.rate}}
-                                </span>
-                            </div>
                         </div>
-                        <div class="tag-film color-text">
-                            <a href="" style="color: #FEFEFE;">
-                                <i class="fas fa-tags" style="color: #C59A22;"></i>
-                                {{this.theLoai.Tenloai}}
-                            </a>
-                        </div>
-                    </div>
                     {{/each}}
                 </div>
             </div>
@@ -286,59 +379,79 @@
                         Phim Hoạt Hình
                     </p>
                 </div>
-                <div class="row">
+                <div class="row colum-12">
                     {{#each data6}}
-                    <div class="colum-s-6 colum-3 card-film">
-                        <div class="content-film">
-                            <div class="img-content-film">
-                                <a href="/films/detail/{{this._id}}">
-                                    <img src="{{this.img}}" alt="" class="img-film" />
+                        <div class="colum-s-6 colum-3 card-film">
+                            <div class="content-film">
+                                <div class="img-content-film">
+                                    <a href="/films/detail/{{this._id}}">
+                                        <img
+                                            src="{{this.img}}"
+                                            alt=""
+                                            class="img-film"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="body">
+                                    <div class="name-film-content">
+                                        <p class="name-film color-text">
+                                            <a
+                                                href="/films/detail/{{this._id}}"
+                                                style="color: #FEFEFE;"
+                                                class="name-text-film"
+                                            >
+                                                {{this.name}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="year color-text">
+                                        ({{this.namSuatBan.year}})
+                                    </div>
+                                    <div class="star">
+                                        <ul class="list-star">
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fas fa-star active-star"
+                                                ></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span class="rate-film color-text">
+                                        Rate :
+                                        {{this.rate}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="tag-film color-text">
+                                <a href="" style="color: #FEFEFE;">
+                                    <i
+                                        class="fas fa-tags"
+                                        style="color: #C59A22;"
+                                    ></i>
+                                    {{this.theLoai.Tenloai}}
                                 </a>
                             </div>
-                            <div class="body">
-                                <div class="name-film-content">
-                                    <p class="name-film color-text">
-                                        <a href="/films/detail/{{this._id}}" style="color: #FEFEFE;"
-                                            class="name-text-film">
-                                            {{this.name}}
-                                        </a>
-                                    </p>
-                                </div>
-                                <div class="year color-text">
-                                    ({{this.namSuatBan.year}})
-                                </div>
-                                <div class="star">
-                                    <ul class="list-star">
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star active-star"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <span class="rate-film color-text">
-                                    Rate :
-                                    {{this.rate}}
-                                </span>
-                            </div>
                         </div>
-                        <div class="tag-film color-text">
-                            <a href="" style="color: #FEFEFE;">
-                                <i class="fas fa-tags" style="color: #C59A22;"></i>
-                                {{this.theLoai.Tenloai}}
-                            </a>
-                        </div>
-                    </div>
                     {{/each}}
                 </div>
             </div>
@@ -351,37 +464,51 @@
                     </div>
                     <div class="side-right">
                         {{#each data2}}
-                        <div class="col-12 cardSide">
-                            <a href="/films/detail/{{this._id}}">
-                                <div class="media">
-                                    <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <dir class="text-body">
-                                            {{this.name}}
-                                        </dir>
-                                        <div class="star-side">
-                                            <ul class="list-star-side">
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                            </ul>
+                            <div class="col-12 cardSide">
+                                <a href="/films/detail/{{this._id}}">
+                                    <div class="media">
+                                        <img
+                                            class="mr-3 img-sidbars"
+                                            src="{{this.img}}"
+                                            alt="Generic placeholder image"
+                                        />
+                                        <div class="media-body">
+                                            <dir class="text-body">
+                                                {{this.name}}
+                                            </dir>
+                                            <div class="star-side">
+                                                <ul class="list-star-side">
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
                         {{/each}}
                     </div>
                 </div>
@@ -391,37 +518,51 @@
                     </div>
                     <div class="side-right">
                         {{#each data7}}
-                        <div class="col-12 cardSide">
-                            <a href="/films/detail/{{this._id}}">
-                                <div class="media">
-                                    <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <dir class="text-body">
-                                            {{this.name}}
-                                        </dir>
-                                        <div class="star-side">
-                                            <ul class="list-star-side">
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                            </ul>
+                            <div class="col-12 cardSide">
+                                <a href="/films/detail/{{this._id}}">
+                                    <div class="media">
+                                        <img
+                                            class="mr-3 img-sidbars"
+                                            src="{{this.img}}"
+                                            alt="Generic placeholder image"
+                                        />
+                                        <div class="media-body">
+                                            <dir class="text-body">
+                                                {{this.name}}
+                                            </dir>
+                                            <div class="star-side">
+                                                <ul class="list-star-side">
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
                         {{/each}}
                     </div>
                 </div>
@@ -431,37 +572,51 @@
                     </div>
                     <div class="side-right">
                         {{#each data8}}
-                        <div class="col-12 cardSide">
-                            <a href="/films/detail/{{this._id}}">
-                                <div class="media">
-                                    <img class="mr-3 img-sidbars" src="{{this.img}}" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <dir class="text-body">
-                                            {{this.name}}
-                                        </dir>
-                                        <div class="star-side">
-                                            <ul class="list-star-side">
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star active-star"></i>
-                                                </li>
-                                            </ul>
+                            <div class="col-12 cardSide">
+                                <a href="/films/detail/{{this._id}}">
+                                    <div class="media">
+                                        <img
+                                            class="mr-3 img-sidbars"
+                                            src="{{this.img}}"
+                                            alt="Generic placeholder image"
+                                        />
+                                        <div class="media-body">
+                                            <dir class="text-body">
+                                                {{this.name}}
+                                            </dir>
+                                            <div class="star-side">
+                                                <ul class="list-star-side">
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                    <li>
+                                                        <i
+                                                            class="fas fa-star active-star"
+                                                        ></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
                         {{/each}}
                     </div>
                 </div>
